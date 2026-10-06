@@ -1,0 +1,18 @@
+[
+  {
+    "id": 4001,
+    "nom": "test (test)",
+    "type": "caritatif",
+    "lat": 47.437618,
+    "lng": -1.142395,
+    "adresse": "23 Rue des Abélias 44522 La Roche-Blanche",
+    "quand": "12 avril 2027 10h",
+    "prix": "Dons",
+    "gratuit": false,
+    "inscription": {
+      "type": "url",
+      "valeur": "",
+      "libelle": "En savoir plus / S'inscrire"
+    }
+  }
+]

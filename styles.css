@@ -1,0 +1,193 @@
+/* --- Variables et configuration de base --- */
+:root {
+  --felt: #17402f;
+  --ink: #16211c;
+  --muted: #5d6a63;
+  --bg: #f6f8f6;
+  --line: #d9e0db;
+  --red: #c8372d;
+  --green: #2e7d5b;
+  --dark: #16211c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- En-tête et Pied de page --- */
+header {
+  background: var(--felt);
+  color: #fff;
+  padding: 14px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+header p {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+footer {
+  padding: 8px 20px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: #fff;
+  border-top: 1px solid var(--line);
+}
+
+/* --- Mise en page principale --- */
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  min-height: 0;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-right: 1px solid var(--line);
+  background: #fff;
+}
+
+#map {
+  height: 100%;
+  min-height: 0;
+}
+
+/* --- Filtres --- */
+.filters {
+  padding: 14px;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 10px;
+}
+
+.filters label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: grid;
+  gap: 4px;
+}
+
+select {
+  font: inherit;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+select:focus-visible, a:focus-visible, .card:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+
+/* --- Liste et Cartes des lieux --- */
+#count {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+#list {
+  overflow: auto;
+  flex: 1;
+  padding: 0 14px 14px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--c);
+  border-radius: 6px;
+  padding: 10px 12px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.card:hover {
+  background: var(--bg);
+}
+
+.card h2 {
+  margin: 0 0 2px;
+  font-size: 1rem;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* --- Badges et Boutons --- */
+.tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--c);
+  margin-right: 4px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 7px 12px;
+  background: var(--felt);
+  color: #fff !important;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #0f2d21;
+}
+
+/* --- Icône marqueur carte --- */
+.chip {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--c);
+  border: 3px dashed #fff;
+  box-shadow: 0 0 0 2px var(--c), 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* --- Responsive (Mobiles) --- */
+@media(max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 45vh 1fr;
+  }
+  #map {
+    order: -1;
+  }
+  aside {
+    border-right: 0;
+  }
+}

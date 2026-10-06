@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Où jouer au poker en France</title>
+  
+  <!-- Polices Google (remets tes liens originaux ici) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS de Leaflet et MarkerCluster (remets tes liens originaux ici) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css">
+
+  <!-- Lien vers TON fichier CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Styles du bouton et de la fenêtre du formulaire (tu peux les déplacer dans styles.css) -->
+  <style>
+    .btn-proposer {
+      margin-top: 8px;
+      padding: 8px 14px;
+      font: inherit;
+      font-weight: 600;
+      color: #17402f;
+      background: #fff;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-proposer:hover { background: #e8ede9; }
+    .btn-proposer:focus-visible,
+    #dlg-close:focus-visible,
+    #dlg-lien:focus-visible { outline: 3px solid #c8372d; outline-offset: 2px; }
+
+    #dlg-tournoi {
+      width: min(680px, 95vw);
+      max-height: 92vh;
+      padding: 0;
+      border: 0;
+      border-radius: 10px;
+      font-family: inherit;
+    }
+    #dlg-tournoi::backdrop { background: rgba(0, 0, 0, 0.55); }
+    .dlg-barre {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #17402f;
+      color: #fff;
+    }
+    .dlg-barre h2 { margin: 0; font-size: 1.05rem; }
+    #dlg-close {
+      font: inherit;
+      font-weight: 600;
+      color: #17402f;
+      background: #fff;
+      border: 0;
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    .dlg-corps { padding: 12px 16px 16px; }
+    #dlg-frame { width: 100%; height: 70vh; border: 0; }
+    #dlg-lien { display: inline-block; margin-top: 8px; font-size: 0.9rem; }
+    #dlg-msg { margin: 0; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <!-- En-tête de la page -->
+  <header>
+    <h1>Où jouer au poker en France</h1>
+    <p>Tournois en bars, casinos, tournois caritatifs : tout au même endroit.</p>
+    <button type="button" id="btn-proposer" class="btn-proposer">Proposer un tournoi caritatif</button>
+  </header>
+
+  <!-- Contenu principal -->
+  <main>
+    <!-- Panneau latéral avec les filtres et la liste -->
+    <aside>
+      <div class="filters">
+        <label>Type de lieu
+          <select id="f-type">
+            <option value="">Tous</option>
+            <option value="bar">Bars Red Cactus</option>
+            <option value="casino">Casinos</option>
+            <option value="caritatif">Tournois caritatifs</option>
+          </select>
+        </label>
+        <label>Tarif
+          <select id="f-prix">
+            <option value="">Gratuit et payant</option>
+            <option value="gratuit">Gratuit</option>
+            <option value="payant">Payant</option>
+          </select>
+        </label>
+      </div>
+      
+      <!-- Compteur de résultats -->
+      <div id="count" aria-live="polite"></div>
+      
+      <!-- Liste des cartes des bars -->
+      <div id="list"></div>
+    </aside>
+    
+    <!-- Conteneur de la carte -->
+    <div id="map" role="region" aria-label="Carte des lieux"></div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer>Interdit aux mineurs. Jouer comporte des risques...</footer>
+
+  <!-- Fenêtre qui affiche le formulaire pour les organisateurs de tournois caritatifs -->
+  <dialog id="dlg-tournoi" aria-labelledby="dlg-titre">
+    <div class="dlg-barre">
+      <h2 id="dlg-titre">Proposer un tournoi caritatif</h2>
+      <button type="button" id="dlg-close">Fermer</button>
+    </div>
+    <div class="dlg-corps">
+      <p id="dlg-msg" hidden>Le formulaire n'est pas encore configuré. Remplace le lien dans le script en bas de la page.</p>
+      <iframe id="dlg-frame" title="Formulaire pour proposer un tournoi caritatif" hidden></iframe>
+      <a id="dlg-lien" href="#" target="_blank" rel="noopener noreferrer" hidden>Ouvrir le formulaire dans un nouvel onglet</a>
+    </div>
+  </dialog>
+
+  <!-- Scripts externes Leaflet et MarkerCluster -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+
+  <!-- Lien vers TON fichier JavaScript -->
+  <script src="app.js"></script>
+
+  <!-- Ouverture du formulaire des organisateurs -->
+  <script>
+    (function () {
+      // 1) Colle ici le lien d'intégration de ton formulaire (voir les explications)
+      const URL_FORMULAIRE = "https://docs.google.com/forms/d/e/1FAIpQLSd1D3HN-joemrjvV5pYSA-wbXtF3-YDajahuXe4At9rseTJIA/viewform?usp=dialog";
+
+      const dlg = document.getElementById("dlg-tournoi");
+      const frame = document.getElementById("dlg-frame");
+      const lien = document.getElementById("dlg-lien");
+      const msg = document.getElementById("dlg-msg");
+
+      // On n'accepte que Google Forms ou Tally, pour ne jamais afficher un site inconnu
+      const valide = /^https:\/\/(docs\.google\.com\/forms\/|tally\.so\/)/.test(URL_FORMULAIRE);
+
+      document.getElementById("btn-proposer").addEventListener("click", function () {
+        if (valide) {
+          frame.src = URL_FORMULAIRE;
+          frame.hidden = false;
+          lien.href = URL_FORMULAIRE;
+          lien.hidden = false;
+          msg.hidden = true;
+        } else {
+          frame.hidden = true;
+          lien.hidden = true;
+          msg.hidden = false;
+        }
+        dlg.showModal();
+      });
+
+      document.getElementById("dlg-close").addEventListener("click", function () { dlg.close(); });
+      // Clic en dehors de la fenêtre : on ferme
+      dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+      // À la fermeture, on vide le formulaire pour ne rien laisser en mémoire
+      dlg.addEventListener("close", function () { frame.removeAttribute("src"); });
+    })();
+  </script>
+</body>
+</html>
