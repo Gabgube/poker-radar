@@ -13,7 +13,9 @@ import urllib.parse, urllib.request
 
 API_DATASET = "https://www.data.gouv.fr/api/1/datasets/liste-des-casinos-de-france/"
 CSV_LOCAL = "casinos_officiel.csv"
-DEPARTEMENT = None if (len(sys.argv) > 1 and sys.argv[1] == "tous") else "44"
+# Par défaut, DEPARTEMENT est à None (toute la France).
+# Si un paramètre est passé (ex: python generate_casinos.py 44), on filtre sur ce département.
+DEPARTEMENT = sys.argv[1] if (len(sys.argv) > 1 and sys.argv[1] != "tous") else None
 
 try:
     import certifi
@@ -163,7 +165,7 @@ for i, c in enumerate(casinos, 1):
     if lat is None:
         echecs.append(f'{c["nom"]}   [département CSV : {c["dep"]}]')
     resultat.append({
-        "id": f"casino-{i}",
+        "id": f"cas_{i}",
         "nom": c["nom"],
         "type": "casino",
         "ville": c["commune"],

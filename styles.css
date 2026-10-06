@@ -191,3 +191,53 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
     border-right: 0;
   }
 }
+
+    .btn-proposer {
+      margin-top: 8px;
+      padding: 8px 14px;
+      font: inherit;
+      font-weight: 600;
+      color: #17402f;
+      background: #fff;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-proposer:hover { background: #e8ede9; }
+    .btn-proposer:focus-visible,
+    #dlg-close:focus-visible,
+    #dlg-lien:focus-visible { outline: 3px solid #c8372d; outline-offset: 2px; }
+
+    #dlg-tournoi {
+      width: min(680px, 95vw);
+      max-height: 92vh;
+      padding: 0;
+      border: 0;
+      border-radius: 10px;
+      font-family: inherit;
+    }
+    #dlg-tournoi::backdrop { background: rgba(0, 0, 0, 0.55); }
+    .dlg-barre {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #17402f;
+      color: #fff;
+    }
+    .dlg-barre h2 { margin: 0; font-size: 1.05rem; }
+    #dlg-close {
+      font: inherit;
+      font-weight: 600;
+      color: #17402f;
+      background: #fff;
+      border: 0;
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    .dlg-corps { padding: 12px 16px 16px; }
+    #dlg-frame { width: 100%; height: 70vh; border: 0; }
+    #dlg-lien { display: inline-block; margin-top: 8px; font-size: 0.9rem; }
+    #dlg-msg { margin: 0; font-size: 0.95rem; }

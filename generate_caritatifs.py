@@ -67,7 +67,7 @@ try:
                     lien_formatted = lien if lien.startswith("http") else f"https://{lien}"
 
                 item = {
-                    "id": 4000 + idx,
+                    "id": f"car_{4000 + idx}",
                     "nom": f"{nom_event} ({lieu_nom})" if lieu_nom else nom_event,
                     "type": "caritatif",
                     "lat": lat,

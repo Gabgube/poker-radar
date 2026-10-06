@@ -1,6 +1,6 @@
 [
   {
-    "id": "casino-1",
+    "id": "cas_1",
     "nom": "Casino Partouche de Divonne-Les Bains",
     "type": "casino",
     "ville": "Divonne-Les Bains",
@@ -17,7 +17,7 @@
     "inscription": null
   },
   {
-    "id": "casino-2",
+    "id": "cas_2",
     "nom": "Casino Independant de Hauteville-Lompnes",
     "type": "casino",
     "ville": "Hauteville-Lompnes",
@@ -34,7 +34,7 @@
     "inscription": null
   },
   {
-    "id": "casino-3",
+    "id": "cas_3",
     "nom": "Casino Novomatic de Bourbon-L'Archambault",
     "type": "casino",
     "ville": "Bourbon-L'Archambault",
@@ -51,7 +51,7 @@
     "inscription": null
   },
   {
-    "id": "casino-4",
+    "id": "cas_4",
     "nom": "Casino Tranchant de Neris-Les-Bains",
     "type": "casino",
     "ville": "Neris-Les-Bains",
@@ -68,7 +68,7 @@
     "inscription": null
   },
   {
-    "id": "casino-5",
+    "id": "cas_5",
     "nom": "Casino Partouche de Vichy – Grand Café",
     "type": "casino",
     "ville": "Vichy",
@@ -85,7 +85,7 @@
     "inscription": null
   },
   {
-    "id": "casino-6",
+    "id": "cas_6",
     "nom": "Casino Partouche de Gréoux-Les-Bains",
     "type": "casino",
     "ville": "Gréoux-Les-Bains",
@@ -102,7 +102,7 @@
     "inscription": null
   },
   {
-    "id": "casino-7",
+    "id": "cas_7",
     "nom": "Casino Circus de Briancon",
     "type": "casino",
     "ville": "Briancon",
@@ -119,7 +119,7 @@
     "inscription": null
   },
   {
-    "id": "casino-8",
+    "id": "cas_8",
     "nom": "Casino JOA de Antibes – La Siesta",
     "type": "casino",
     "ville": "Antibes",
@@ -129,18 +129,14 @@
     "lng": 7.1048,
     "position_approximative": false,
     "exploitant": "JOA",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://casinosavenue.com/fr/casino/joa-antibes-casino-la-siesta/tournois-de-poker-et-cash-games/8510",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "Casino La Siesta : 2 tables de cash tous les jours dès 21h, tournois chaque semaine"
+    "inscription": null
   },
   {
-    "id": "casino-9",
+    "id": "cas_9",
     "nom": "Casino Partouche de Antibes-Juan-Les-Pins",
     "type": "casino",
     "ville": "Antibes-Juan-Les-Pins",
@@ -157,7 +153,7 @@
     "inscription": null
   },
   {
-    "id": "casino-10",
+    "id": "cas_10",
     "nom": "Casino Raineau de Beaulieu-Sur-Mer",
     "type": "casino",
     "ville": "Beaulieu-Sur-Mer",
@@ -174,7 +170,7 @@
     "inscription": null
   },
   {
-    "id": "casino-11",
+    "id": "cas_11",
     "nom": "Casino Tranchant de Cagnes-Sur-Mer",
     "type": "casino",
     "ville": "Cagnes-Sur-Mer",
@@ -191,7 +187,7 @@
     "inscription": null
   },
   {
-    "id": "casino-12",
+    "id": "cas_12",
     "nom": "Casino Barrière/Desseigne de Cannes – Croisette",
     "type": "casino",
     "ville": "Cannes",
@@ -208,7 +204,7 @@
     "inscription": null
   },
   {
-    "id": "casino-13",
+    "id": "cas_13",
     "nom": "Casino Partouche de Cannes – 50 Croisette",
     "type": "casino",
     "ville": "Cannes",
@@ -225,7 +221,7 @@
     "inscription": null
   },
   {
-    "id": "casino-14",
+    "id": "cas_14",
     "nom": "Casino Partouche de Cannes – Royal Palm",
     "type": "casino",
     "ville": "Cannes",
@@ -242,7 +238,7 @@
     "inscription": null
   },
   {
-    "id": "casino-15",
+    "id": "cas_15",
     "nom": "Casino Infinity Drgt de Grasse",
     "type": "casino",
     "ville": "Grasse",
@@ -259,7 +255,7 @@
     "inscription": null
   },
   {
-    "id": "casino-16",
+    "id": "cas_16",
     "nom": "Casino JOA de Mandelieu-La-Napoule",
     "type": "casino",
     "ville": "Mandelieu-La-Napoule",
@@ -276,7 +272,7 @@
     "inscription": null
   },
   {
-    "id": "casino-17",
+    "id": "cas_17",
     "nom": "Casino Barrière de Menton",
     "type": "casino",
     "ville": "Menton",
@@ -293,7 +289,7 @@
     "inscription": null
   },
   {
-    "id": "casino-18",
+    "id": "cas_18",
     "nom": "Casino Partouche de Nice – Palais De La Mediterranee",
     "type": "casino",
     "ville": "Nice",
@@ -310,7 +306,7 @@
     "inscription": null
   },
   {
-    "id": "casino-19",
+    "id": "cas_19",
     "nom": "Casino Barrière de Nice – Ruhl",
     "type": "casino",
     "ville": "Nice",
@@ -327,7 +323,7 @@
     "inscription": null
   },
   {
-    "id": "casino-20",
+    "id": "cas_20",
     "nom": "Casino Circus de Vals-Les-Bains",
     "type": "casino",
     "ville": "Vals-Les-Bains",
@@ -344,7 +340,7 @@
     "inscription": null
   },
   {
-    "id": "casino-21",
+    "id": "cas_21",
     "nom": "Casino JOA de Ax-Les-Thermes",
     "type": "casino",
     "ville": "Ax-Les-Thermes",
@@ -354,18 +350,14 @@
     "lng": 1.8192,
     "position_approximative": false,
     "exploitant": "JOA",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-joa-ax-les-thermes/tournois-de-poker-et-cash-games/8518",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "2 tables de cash du jeudi au dimanche, tournois hebdomadaires, souvent le vendredi"
+    "inscription": null
   },
   {
-    "id": "casino-22",
+    "id": "cas_22",
     "nom": "Casino Arevian de Alet-Les-Bains",
     "type": "casino",
     "ville": "Alet-Les-Bains",
@@ -382,7 +374,7 @@
     "inscription": null
   },
   {
-    "id": "casino-23",
+    "id": "cas_23",
     "nom": "Casino Stelsia de Gruissan",
     "type": "casino",
     "ville": "Gruissan",
@@ -399,7 +391,7 @@
     "inscription": null
   },
   {
-    "id": "casino-24",
+    "id": "cas_24",
     "nom": "Casino Stelsia de Port-La-Nouvelle",
     "type": "casino",
     "ville": "Port-La-Nouvelle",
@@ -416,7 +408,7 @@
     "inscription": null
   },
   {
-    "id": "casino-25",
+    "id": "cas_25",
     "nom": "Casino Circus de Leucate",
     "type": "casino",
     "ville": "Leucate",
@@ -433,7 +425,7 @@
     "inscription": null
   },
   {
-    "id": "casino-26",
+    "id": "cas_26",
     "nom": "Casino Arevian de Cransac",
     "type": "casino",
     "ville": "Cransac",
@@ -450,7 +442,7 @@
     "inscription": null
   },
   {
-    "id": "casino-27",
+    "id": "cas_27",
     "nom": "Casino Partouche de Aix-En-Provence",
     "type": "casino",
     "ville": "Aix-En-Provence",
@@ -460,22 +452,14 @@
     "lng": 5.3879,
     "position_approximative": false,
     "exploitant": "Partouche",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": {
-      "type": "telephone",
-      "valeur": "0442596900",
-      "libelle": "Appeler le casino pour s'inscrire"
-    },
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-partouche-aix-en-provence-hotel/tournois-de-poker-cash-games/8550",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "8 tables de Hold'em, tournois avec buy-in de 60 à 200 €"
+    "inscription": null
   },
   {
-    "id": "casino-28",
+    "id": "cas_28",
     "nom": "Casino Barrière de Carry-Le-Rouet",
     "type": "casino",
     "ville": "Carry-Le-Rouet",
@@ -492,7 +476,7 @@
     "inscription": null
   },
   {
-    "id": "casino-29",
+    "id": "cas_29",
     "nom": "Casino Barrière de Cassis",
     "type": "casino",
     "ville": "Cassis",
@@ -502,22 +486,14 @@
     "lng": 5.5503,
     "position_approximative": false,
     "exploitant": "Barrière",
-    "poker": "tournois",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": {
-      "type": "lien",
-      "valeur": "https://www.casinosbarriere.com/tournois-poker",
-      "libelle": "Voir la page du casino"
-    },
-    "source_poker": "https://www.casinosbarriere.com/tournois-poker",
-    "fiabilite_source": "officielle",
-    "date_verification": "2026-10-05",
-    "notes": "Casino cité parmi ceux du calendrier de tournois officiel, à confirmer"
+    "inscription": null
   },
   {
-    "id": "casino-30",
+    "id": "cas_30",
     "nom": "Casino Partouche de La Ciotat",
     "type": "casino",
     "ville": "La Ciotat",
@@ -534,7 +510,7 @@
     "inscription": null
   },
   {
-    "id": "casino-31",
+    "id": "cas_31",
     "nom": "Casino Partouche de Cabourg",
     "type": "casino",
     "ville": "Cabourg",
@@ -551,7 +527,7 @@
     "inscription": null
   },
   {
-    "id": "casino-32",
+    "id": "cas_32",
     "nom": "Casino Barrière de Deauville",
     "type": "casino",
     "ville": "Deauville",
@@ -568,7 +544,7 @@
     "inscription": null
   },
   {
-    "id": "casino-33",
+    "id": "cas_33",
     "nom": "Casino Novomatic de Houlgate",
     "type": "casino",
     "ville": "Houlgate",
@@ -585,7 +561,7 @@
     "inscription": null
   },
   {
-    "id": "casino-34",
+    "id": "cas_34",
     "nom": "Casino Tranchant de Luc-Sur-Mer",
     "type": "casino",
     "ville": "Luc-Sur-Mer",
@@ -602,7 +578,7 @@
     "inscription": null
   },
   {
-    "id": "casino-35",
+    "id": "cas_35",
     "nom": "Casino Barrière de Ouistreham",
     "type": "casino",
     "ville": "Ouistreham",
@@ -619,7 +595,7 @@
     "inscription": null
   },
   {
-    "id": "casino-36",
+    "id": "cas_36",
     "nom": "Casino JOA de Saint-Aubin-Sur-Mer",
     "type": "casino",
     "ville": "Saint-Aubin-Sur-Mer",
@@ -636,7 +612,7 @@
     "inscription": null
   },
   {
-    "id": "casino-37",
+    "id": "cas_37",
     "nom": "Casino Barrière de Trouville",
     "type": "casino",
     "ville": "Trouville",
@@ -653,7 +629,7 @@
     "inscription": null
   },
   {
-    "id": "casino-38",
+    "id": "cas_38",
     "nom": "Casino Tranchant de Villers-Sur-Mer",
     "type": "casino",
     "ville": "Villers-Sur-Mer",
@@ -670,7 +646,7 @@
     "inscription": null
   },
   {
-    "id": "casino-39",
+    "id": "cas_39",
     "nom": "Casino Arevian de Chaudes-Aigues",
     "type": "casino",
     "ville": "Chaudes-Aigues",
@@ -687,7 +663,7 @@
     "inscription": null
   },
   {
-    "id": "casino-40",
+    "id": "cas_40",
     "nom": "Casino Arevian de Vic-Sur-Cère",
     "type": "casino",
     "ville": "Vic-Sur-Cère",
@@ -704,7 +680,7 @@
     "inscription": null
   },
   {
-    "id": "casino-41",
+    "id": "cas_41",
     "nom": "Casino JOA de Chatelaillon",
     "type": "casino",
     "ville": "Chatelaillon",
@@ -721,7 +697,7 @@
     "inscription": null
   },
   {
-    "id": "casino-42",
+    "id": "cas_42",
     "nom": "Casino JOA de Fouras",
     "type": "casino",
     "ville": "Fouras",
@@ -738,7 +714,7 @@
     "inscription": null
   },
   {
-    "id": "casino-43",
+    "id": "cas_43",
     "nom": "Casino Arevian de Jonzac",
     "type": "casino",
     "ville": "Jonzac",
@@ -755,7 +731,7 @@
     "inscription": null
   },
   {
-    "id": "casino-44",
+    "id": "cas_44",
     "nom": "Casino Barrière de La Rochelle",
     "type": "casino",
     "ville": "La Rochelle",
@@ -772,7 +748,7 @@
     "inscription": null
   },
   {
-    "id": "casino-45",
+    "id": "cas_45",
     "nom": "Casino Partouche de La Tremblade",
     "type": "casino",
     "ville": "La Tremblade",
@@ -789,7 +765,7 @@
     "inscription": null
   },
   {
-    "id": "casino-46",
+    "id": "cas_46",
     "nom": "Casino Barrière de Royan",
     "type": "casino",
     "ville": "Royan",
@@ -806,7 +782,7 @@
     "inscription": null
   },
   {
-    "id": "casino-47",
+    "id": "cas_47",
     "nom": "Casino Arevian de Saint-Trojan",
     "type": "casino",
     "ville": "Saint-Trojan",
@@ -823,7 +799,7 @@
     "inscription": null
   },
   {
-    "id": "casino-48",
+    "id": "cas_48",
     "nom": "Casino Independant de Ajaccio",
     "type": "casino",
     "ville": "Ajaccio",
@@ -840,7 +816,7 @@
     "inscription": null
   },
   {
-    "id": "casino-49",
+    "id": "cas_49",
     "nom": "Casino JOA de Santenay-Les-Bains",
     "type": "casino",
     "ville": "Santenay-Les-Bains",
@@ -850,18 +826,14 @@
     "lng": 4.6929,
     "position_approximative": false,
     "exploitant": "JOA",
-    "poker": "cash",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-joa-santenay/poker/8457",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "2 tables de cash tous les soirs dès 20h (blinds 1/2), tournois seulement à l'occasion"
+    "inscription": null
   },
   {
-    "id": "casino-50",
+    "id": "cas_50",
     "nom": "Casino Kasinos Bretagne de Frehel-Les-Sables D'Or",
     "type": "casino",
     "ville": "Frehel-Les-Sables D'Or",
@@ -878,7 +850,7 @@
     "inscription": null
   },
   {
-    "id": "casino-51",
+    "id": "cas_51",
     "nom": "Casino Kasinos Bretagne de Perros-Guirec",
     "type": "casino",
     "ville": "Perros-Guirec",
@@ -888,18 +860,14 @@
     "lng": -3.476,
     "position_approximative": false,
     "exploitant": "Kasinos Bretagne",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://francecasino.fr/casino-de-perros-guirec-kasinos-bretagne/",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "Salle Hold'em (cave dès 50 €), cash game le soir, sit & go le jeudi, tournois rares selon d'anciens avis"
+    "inscription": null
   },
   {
-    "id": "casino-52",
+    "id": "cas_52",
     "nom": "Casino Partouche de Pléneuf-Val André",
     "type": "casino",
     "ville": "Pléneuf-Val André",
@@ -916,7 +884,7 @@
     "inscription": null
   },
   {
-    "id": "casino-53",
+    "id": "cas_53",
     "nom": "Casino Kasinos Bretagne de Saint-Quay Portrieux",
     "type": "casino",
     "ville": "Saint-Quay Portrieux",
@@ -933,7 +901,7 @@
     "inscription": null
   },
   {
-    "id": "casino-54",
+    "id": "cas_54",
     "nom": "Casino Partouche de Evaux-Les-Bains",
     "type": "casino",
     "ville": "Evaux-Les-Bains",
@@ -950,7 +918,7 @@
     "inscription": null
   },
   {
-    "id": "casino-55",
+    "id": "cas_55",
     "nom": "Casino JOA de Besançon",
     "type": "casino",
     "ville": "Besançon",
@@ -967,7 +935,7 @@
     "inscription": null
   },
   {
-    "id": "casino-56",
+    "id": "cas_56",
     "nom": "Casino Barrière de Benodet",
     "type": "casino",
     "ville": "Benodet",
@@ -984,7 +952,7 @@
     "inscription": null
   },
   {
-    "id": "casino-57",
+    "id": "cas_57",
     "nom": "Casino Partouche de Plouescat",
     "type": "casino",
     "ville": "Plouescat",
@@ -1001,7 +969,7 @@
     "inscription": null
   },
   {
-    "id": "casino-58",
+    "id": "cas_58",
     "nom": "Casino Tranchant de Roscoff",
     "type": "casino",
     "ville": "Roscoff",
@@ -1018,7 +986,7 @@
     "inscription": null
   },
   {
-    "id": "casino-59",
+    "id": "cas_59",
     "nom": "Casino Arevian de Allegre",
     "type": "casino",
     "ville": "Allegre",
@@ -1035,7 +1003,7 @@
     "inscription": null
   },
   {
-    "id": "casino-60",
+    "id": "cas_60",
     "nom": "Casino Tranchant de Le Grau-Du-Roi",
     "type": "casino",
     "ville": "Le Grau-Du-Roi",
@@ -1052,7 +1020,7 @@
     "inscription": null
   },
   {
-    "id": "casino-61",
+    "id": "cas_61",
     "nom": "Casino Novomatic de Barbazan",
     "type": "casino",
     "ville": "Barbazan",
@@ -1069,7 +1037,7 @@
     "inscription": null
   },
   {
-    "id": "casino-62",
+    "id": "cas_62",
     "nom": "Casino Arevian de Salies-Du-Salat",
     "type": "casino",
     "ville": "Salies-Du-Salat",
@@ -1086,7 +1054,7 @@
     "inscription": null
   },
   {
-    "id": "casino-63",
+    "id": "cas_63",
     "nom": "Casino Barrière de Toulouse",
     "type": "casino",
     "ville": "Toulouse",
@@ -1096,22 +1064,14 @@
     "lng": 1.4328,
     "position_approximative": false,
     "exploitant": "Barrière",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": {
-      "type": "lien",
-      "valeur": "https://www.casinosbarriere.com/tournois-poker",
-      "libelle": "Voir la page du casino"
-    },
-    "source_poker": "https://www.casinosbarriere.com/tournois-poker",
-    "fiabilite_source": "officielle",
-    "date_verification": "2026-10-05",
-    "notes": "Tournois au calendrier Barrière, cash 5/5 du mercredi au dimanche (source secondaire)"
+    "inscription": null
   },
   {
-    "id": "casino-64",
+    "id": "cas_64",
     "nom": "Casino Novomatic de Castera-Verduzan",
     "type": "casino",
     "ville": "Castera-Verduzan",
@@ -1128,7 +1088,7 @@
     "inscription": null
   },
   {
-    "id": "casino-65",
+    "id": "cas_65",
     "nom": "Casino Circus de Cazaubon-Barbotan",
     "type": "casino",
     "ville": "Cazaubon-Barbotan",
@@ -1145,7 +1105,7 @@
     "inscription": null
   },
   {
-    "id": "casino-66",
+    "id": "cas_66",
     "nom": "Casino Arevian de Lectoure",
     "type": "casino",
     "ville": "Lectoure",
@@ -1162,7 +1122,7 @@
     "inscription": null
   },
   {
-    "id": "casino-67",
+    "id": "cas_67",
     "nom": "Casino Partouche de Andernos",
     "type": "casino",
     "ville": "Andernos",
@@ -1179,7 +1139,7 @@
     "inscription": null
   },
   {
-    "id": "casino-68",
+    "id": "cas_68",
     "nom": "Casino Partouche de Arcachon",
     "type": "casino",
     "ville": "Arcachon",
@@ -1196,7 +1156,7 @@
     "inscription": null
   },
   {
-    "id": "casino-69",
+    "id": "cas_69",
     "nom": "Casino Barrière de Bordeaux",
     "type": "casino",
     "ville": "Bordeaux",
@@ -1206,22 +1166,14 @@
     "lng": -0.5848,
     "position_approximative": false,
     "exploitant": "Barrière",
-    "poker": "tournois",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": {
-      "type": "lien",
-      "valeur": "https://www.casinosbarriere.com/tournois-poker",
-      "libelle": "Voir la page du casino"
-    },
-    "source_poker": "https://www.casinosbarriere.com/tournois-poker",
-    "fiabilite_source": "officielle",
-    "date_verification": "2026-10-05",
-    "notes": "Mercredi Poker Time et Small du Jeudi au calendrier officiel"
+    "inscription": null
   },
   {
-    "id": "casino-70",
+    "id": "cas_70",
     "nom": "Casino JOA de Gujan-Mestras",
     "type": "casino",
     "ville": "Gujan-Mestras",
@@ -1231,22 +1183,14 @@
     "lng": -1.0813,
     "position_approximative": false,
     "exploitant": "JOA",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": {
-      "type": "lien",
-      "valeur": "https://www.joa.fr/casinos/gujan-mestras/jeux/poker",
-      "libelle": "Voir la page du casino"
-    },
-    "source_poker": "https://www.joa.fr/casinos/gujan-mestras/jeux/poker",
-    "fiabilite_source": "officielle",
-    "date_verification": "2026-10-05",
-    "notes": "Cash game Hold'em chaque semaine et tournois du mois sur le site officiel du casino"
+    "inscription": null
   },
   {
-    "id": "casino-71",
+    "id": "cas_71",
     "nom": "Casino Cogit de Lacanau",
     "type": "casino",
     "ville": "Lacanau",
@@ -1263,7 +1207,7 @@
     "inscription": null
   },
   {
-    "id": "casino-72",
+    "id": "cas_72",
     "nom": "Casino Circus de Balaruc-Les-Bains",
     "type": "casino",
     "ville": "Balaruc-Les-Bains",
@@ -1280,7 +1224,7 @@
     "inscription": null
   },
   {
-    "id": "casino-73",
+    "id": "cas_73",
     "nom": "Casino Barrière de Cap-D'Agde",
     "type": "casino",
     "ville": "Cap-D'Agde",
@@ -1297,7 +1241,7 @@
     "inscription": null
   },
   {
-    "id": "casino-74",
+    "id": "cas_74",
     "nom": "Casino Partouche de La Grande-Motte",
     "type": "casino",
     "ville": "La Grande-Motte",
@@ -1314,7 +1258,7 @@
     "inscription": null
   },
   {
-    "id": "casino-75",
+    "id": "cas_75",
     "nom": "Casino Jaar de Lamalou",
     "type": "casino",
     "ville": "Lamalou",
@@ -1331,7 +1275,7 @@
     "inscription": null
   },
   {
-    "id": "casino-76",
+    "id": "cas_76",
     "nom": "Casino Partouche de Palavas-Les-Flots",
     "type": "casino",
     "ville": "Palavas-Les-Flots",
@@ -1348,7 +1292,7 @@
     "inscription": null
   },
   {
-    "id": "casino-77",
+    "id": "cas_77",
     "nom": "Casino Tranchant de Sète",
     "type": "casino",
     "ville": "Sète",
@@ -1365,7 +1309,7 @@
     "inscription": null
   },
   {
-    "id": "casino-78",
+    "id": "cas_78",
     "nom": "Casino Tranchant de Valras-Plage",
     "type": "casino",
     "ville": "Valras-Plage",
@@ -1382,7 +1326,7 @@
     "inscription": null
   },
   {
-    "id": "casino-79",
+    "id": "cas_79",
     "nom": "Casino Barrière de Dinard",
     "type": "casino",
     "ville": "Dinard",
@@ -1399,7 +1343,7 @@
     "inscription": null
   },
   {
-    "id": "casino-80",
+    "id": "cas_80",
     "nom": "Casino Barrière de Saint-Malo",
     "type": "casino",
     "ville": "Saint-Malo",
@@ -1416,7 +1360,7 @@
     "inscription": null
   },
   {
-    "id": "casino-81",
+    "id": "cas_81",
     "nom": "Casino Circus de Allevard",
     "type": "casino",
     "ville": "Allevard",
@@ -1433,7 +1377,7 @@
     "inscription": null
   },
   {
-    "id": "casino-82",
+    "id": "cas_82",
     "nom": "Casino JOA de Saint-Martin-D'Uriage",
     "type": "casino",
     "ville": "Saint-Martin-D'Uriage",
@@ -1443,18 +1387,14 @@
     "lng": 5.8592,
     "position_approximative": false,
     "exploitant": "JOA",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-joa-saint-martin-d-uriage/tournois-de-poker-et-cash-games/8451",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "3 tables de cash Hold'em (cave min. 100 €), tournois réguliers"
+    "inscription": null
   },
   {
-    "id": "casino-83",
+    "id": "cas_83",
     "nom": "Casino Arevian de Villard-De-Lans",
     "type": "casino",
     "ville": "Villard-De-Lans",
@@ -1471,7 +1411,7 @@
     "inscription": null
   },
   {
-    "id": "casino-84",
+    "id": "cas_84",
     "nom": "Casino JOA de Lons-Le-Saunier",
     "type": "casino",
     "ville": "Lons-Le-Saunier",
@@ -1488,7 +1428,7 @@
     "inscription": null
   },
   {
-    "id": "casino-85",
+    "id": "cas_85",
     "nom": "Casino Independant de Salins-Les-Bains",
     "type": "casino",
     "ville": "Salins-Les-Bains",
@@ -1505,7 +1445,7 @@
     "inscription": null
   },
   {
-    "id": "casino-86",
+    "id": "cas_86",
     "nom": "Casino JOA de Saint-Laurent-En-Grandvaux",
     "type": "casino",
     "ville": "Saint-Laurent-En-Grandvaux",
@@ -1522,7 +1462,7 @@
     "inscription": null
   },
   {
-    "id": "casino-87",
+    "id": "cas_87",
     "nom": "Casino Cogit de Biscarrosse",
     "type": "casino",
     "ville": "Biscarrosse",
@@ -1539,7 +1479,7 @@
     "inscription": null
   },
   {
-    "id": "casino-88",
+    "id": "cas_88",
     "nom": "Casino Hirigoyen de Capbreton",
     "type": "casino",
     "ville": "Capbreton",
@@ -1556,7 +1496,7 @@
     "inscription": null
   },
   {
-    "id": "casino-89",
+    "id": "cas_89",
     "nom": "Casino Arevian de Dax",
     "type": "casino",
     "ville": "Dax",
@@ -1573,7 +1513,7 @@
     "inscription": null
   },
   {
-    "id": "casino-90",
+    "id": "cas_90",
     "nom": "Casino Stelsia de Mimizan",
     "type": "casino",
     "ville": "Mimizan",
@@ -1590,7 +1530,7 @@
     "inscription": null
   },
   {
-    "id": "casino-91",
+    "id": "cas_91",
     "nom": "Casino JOA de Saint-Paul-Lès-Dax",
     "type": "casino",
     "ville": "Saint-Paul-Lès-Dax",
@@ -1607,7 +1547,7 @@
     "inscription": null
   },
   {
-    "id": "casino-92",
+    "id": "cas_92",
     "nom": "Casino Hirigoyen de Soorts-Hossegor",
     "type": "casino",
     "ville": "Soorts-Hossegor",
@@ -1624,7 +1564,7 @@
     "inscription": null
   },
   {
-    "id": "casino-93",
+    "id": "cas_93",
     "nom": "Casino JOA de Montrond-Les-Bains",
     "type": "casino",
     "ville": "Montrond-Les-Bains",
@@ -1641,7 +1581,7 @@
     "inscription": null
   },
   {
-    "id": "casino-94",
+    "id": "cas_94",
     "nom": "Casino Golden Palace de Noiretable",
     "type": "casino",
     "ville": "Noiretable",
@@ -1658,7 +1598,7 @@
     "inscription": null
   },
   {
-    "id": "casino-95",
+    "id": "cas_95",
     "nom": "Casino Partouche de Saint-Galmier",
     "type": "casino",
     "ville": "Saint-Galmier",
@@ -1675,7 +1615,7 @@
     "inscription": null
   },
   {
-    "id": "casino-96",
+    "id": "cas_96",
     "nom": "Casino Barrière de La Baule",
     "type": "casino",
     "ville": "La Baule",
@@ -1692,7 +1632,7 @@
     "inscription": null
   },
   {
-    "id": "casino-97",
+    "id": "cas_97",
     "nom": "Casino Partouche de Pornic",
     "type": "casino",
     "ville": "Pornic",
@@ -1702,22 +1642,14 @@
     "lng": -2.0569,
     "position_approximative": false,
     "exploitant": "Partouche",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": {
-      "type": "telephone",
-      "valeur": "0240822687",
-      "libelle": "Appeler le casino pour s'inscrire"
-    },
-    "source_poker": "https://casino-partouche-pornic.com/",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "Poker room : cash game Hold'em blinds 2/4 en soirée et tournois réguliers (site possiblement non officiel), numéro et horaires à confirmer auprès du casino"
+    "inscription": null
   },
   {
-    "id": "casino-98",
+    "id": "cas_98",
     "nom": "Casino Partouche de Pornichet",
     "type": "casino",
     "ville": "Pornichet",
@@ -1727,22 +1659,14 @@
     "lng": -2.3225,
     "position_approximative": false,
     "exploitant": "Partouche",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": {
-      "type": "telephone",
-      "valeur": "0240610548",
-      "libelle": "Appeler le casino pour s'inscrire"
-    },
-    "source_poker": "https://www.pornichet.fr/casino-partouche-de-pornichet",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "3 tables de cash Hold'em (blinds 2/4, cave 50 à 250 €), inscriptions sur place vers 20h20, tournois ponctuels, infos poker au 06 75 98 35 09 (source clubpoker.net)"
+    "inscription": null
   },
   {
-    "id": "casino-99",
+    "id": "cas_99",
     "nom": "Casino JOA de Saint-Brévin-Les-Pins",
     "type": "casino",
     "ville": "Saint-Brévin-Les-Pins",
@@ -1759,7 +1683,7 @@
     "inscription": null
   },
   {
-    "id": "casino-100",
+    "id": "cas_100",
     "nom": "Casino Arevian de Alvignac",
     "type": "casino",
     "ville": "Alvignac",
@@ -1776,7 +1700,7 @@
     "inscription": null
   },
   {
-    "id": "casino-101",
+    "id": "cas_101",
     "nom": "Casino Arevian de Casteljaloux",
     "type": "casino",
     "ville": "Casteljaloux",
@@ -1793,7 +1717,7 @@
     "inscription": null
   },
   {
-    "id": "casino-102",
+    "id": "cas_102",
     "nom": "Casino Cogit de Cherbourg",
     "type": "casino",
     "ville": "Cherbourg",
@@ -1810,7 +1734,7 @@
     "inscription": null
   },
   {
-    "id": "casino-103",
+    "id": "cas_103",
     "nom": "Casino Partouche de Agon-Coutainville",
     "type": "casino",
     "ville": "Agon-Coutainville",
@@ -1827,7 +1751,7 @@
     "inscription": null
   },
   {
-    "id": "casino-104",
+    "id": "cas_104",
     "nom": "Casino Stelsia de Granville",
     "type": "casino",
     "ville": "Granville",
@@ -1844,7 +1768,7 @@
     "inscription": null
   },
   {
-    "id": "casino-105",
+    "id": "cas_105",
     "nom": "Casino JOA de Saint-Pair-Sur-Mer",
     "type": "casino",
     "ville": "Saint-Pair-Sur-Mer",
@@ -1861,7 +1785,7 @@
     "inscription": null
   },
   {
-    "id": "casino-106",
+    "id": "cas_106",
     "nom": "Casino JOA de Giffaumont-Champaubert",
     "type": "casino",
     "ville": "Giffaumont-Champaubert",
@@ -1878,7 +1802,7 @@
     "inscription": null
   },
   {
-    "id": "casino-107",
+    "id": "cas_107",
     "nom": "Casino JOA de Bourbonne-Les-Bains",
     "type": "casino",
     "ville": "Bourbonne-Les-Bains",
@@ -1895,7 +1819,7 @@
     "inscription": null
   },
   {
-    "id": "casino-108",
+    "id": "cas_108",
     "nom": "Casino JOA de Arzon",
     "type": "casino",
     "ville": "Arzon",
@@ -1912,7 +1836,7 @@
     "inscription": null
   },
   {
-    "id": "casino-109",
+    "id": "cas_109",
     "nom": "Casino Circus de Carnac",
     "type": "casino",
     "ville": "Carnac",
@@ -1929,7 +1853,7 @@
     "inscription": null
   },
   {
-    "id": "casino-110",
+    "id": "cas_110",
     "nom": "Casino Kasinos Bretagne de Larmor-Plage",
     "type": "casino",
     "ville": "Larmor-Plage",
@@ -1946,7 +1870,7 @@
     "inscription": null
   },
   {
-    "id": "casino-111",
+    "id": "cas_111",
     "nom": "Casino Kasinos Bretagne de Quiberon",
     "type": "casino",
     "ville": "Quiberon",
@@ -1963,7 +1887,7 @@
     "inscription": null
   },
   {
-    "id": "casino-112",
+    "id": "cas_112",
     "nom": "Casino Kasinos Bretagne de Vannes",
     "type": "casino",
     "ville": "Vannes",
@@ -1980,7 +1904,7 @@
     "inscription": null
   },
   {
-    "id": "casino-113",
+    "id": "cas_113",
     "nom": "Casino Tranchant de Amneville",
     "type": "casino",
     "ville": "Amneville",
@@ -1990,18 +1914,14 @@
     "lng": 6.1179,
     "position_approximative": false,
     "exploitant": "Tranchant",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-tranchant-de-amneville/8401",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "Grande poker room (cash dès 5/5 et tournois le dimanche à 16h) mais page ancienne (environ 2022) à confirmer"
+    "inscription": null
   },
   {
-    "id": "casino-114",
+    "id": "cas_114",
     "nom": "Casino Tranchant de Pougues-Les-Eaux",
     "type": "casino",
     "ville": "Pougues-Les-Eaux",
@@ -2018,7 +1938,7 @@
     "inscription": null
   },
   {
-    "id": "casino-115",
+    "id": "cas_115",
     "nom": "Casino Independant de Saint-Honore-Les-Bains",
     "type": "casino",
     "ville": "Saint-Honore-Les-Bains",
@@ -2035,7 +1955,7 @@
     "inscription": null
   },
   {
-    "id": "casino-116",
+    "id": "cas_116",
     "nom": "Casino Tranchant de Dunkerque-Malo-Les-Bains",
     "type": "casino",
     "ville": "Dunkerque-Malo-Les-Bains",
@@ -2052,7 +1972,7 @@
     "inscription": null
   },
   {
-    "id": "casino-117",
+    "id": "cas_117",
     "nom": "Casino Barrière de Lille",
     "type": "casino",
     "ville": "Lille",
@@ -2069,7 +1989,7 @@
     "inscription": null
   },
   {
-    "id": "casino-118",
+    "id": "cas_118",
     "nom": "Casino Partouche de Saint-Amand-Les-Eaux",
     "type": "casino",
     "ville": "Saint-Amand-Les-Eaux",
@@ -2079,18 +1999,14 @@
     "lng": 3.4447,
     "position_approximative": false,
     "exploitant": "Partouche",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/pasino-partouche-hotel-saint-amand-les-eaux/tournois-de-poker-cash-gamse/8523",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "4 tables de cash Hold'em et 2 de PLO, inscription via le site du casino"
+    "inscription": null
   },
   {
-    "id": "casino-119",
+    "id": "cas_119",
     "nom": "Casino JOA de Bagnoles-De-L'Orne",
     "type": "casino",
     "ville": "Bagnoles-De-L'Orne",
@@ -2107,7 +2023,7 @@
     "inscription": null
   },
   {
-    "id": "casino-120",
+    "id": "cas_120",
     "nom": "Casino Partouche de Berck-Sur-Mer",
     "type": "casino",
     "ville": "Berck-Sur-Mer",
@@ -2124,7 +2040,7 @@
     "inscription": null
   },
   {
-    "id": "casino-121",
+    "id": "cas_121",
     "nom": "Casino Golden Palace de Boulogne-Sur-Mer",
     "type": "casino",
     "ville": "Boulogne-Sur-Mer",
@@ -2141,7 +2057,7 @@
     "inscription": null
   },
   {
-    "id": "casino-122",
+    "id": "cas_122",
     "nom": "Casino Partouche de Calais",
     "type": "casino",
     "ville": "Calais",
@@ -2158,7 +2074,7 @@
     "inscription": null
   },
   {
-    "id": "casino-123",
+    "id": "cas_123",
     "nom": "Casino Barrière de Le Touquet – Le Palais",
     "type": "casino",
     "ville": "Le Touquet",
@@ -2175,7 +2091,7 @@
     "inscription": null
   },
   {
-    "id": "casino-124",
+    "id": "cas_124",
     "nom": "Casino Partouche de Le Touquet – 4 Saisons",
     "type": "casino",
     "ville": "Le Touquet",
@@ -2185,18 +2101,14 @@
     "lng": 1.6055,
     "position_approximative": false,
     "exploitant": "Partouche",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-partouche-le-touquet/tournois-de-poker-cash-games/8525",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "2 tables de Hold'em, tournois les lundis et vendredis à 20h30"
+    "inscription": null
   },
   {
-    "id": "casino-125",
+    "id": "cas_125",
     "nom": "Casino Stelsia de Chatel-Guyon",
     "type": "casino",
     "ville": "Chatel-Guyon",
@@ -2213,7 +2125,7 @@
     "inscription": null
   },
   {
-    "id": "casino-126",
+    "id": "cas_126",
     "nom": "Casino Jaar de Saint-Nectaire",
     "type": "casino",
     "ville": "Saint-Nectaire",
@@ -2230,7 +2142,7 @@
     "inscription": null
   },
   {
-    "id": "casino-127",
+    "id": "cas_127",
     "nom": "Casino Arevian de La Bourboule",
     "type": "casino",
     "ville": "La Bourboule",
@@ -2247,7 +2159,7 @@
     "inscription": null
   },
   {
-    "id": "casino-128",
+    "id": "cas_128",
     "nom": "Casino Partouche de Royat-Chamalieres",
     "type": "casino",
     "ville": "Royat-Chamalieres",
@@ -2264,7 +2176,7 @@
     "inscription": null
   },
   {
-    "id": "casino-129",
+    "id": "cas_129",
     "nom": "Casino Barrière de Biarritz",
     "type": "casino",
     "ville": "Biarritz",
@@ -2281,7 +2193,7 @@
     "inscription": null
   },
   {
-    "id": "casino-130",
+    "id": "cas_130",
     "nom": "Casino Independant de Hendaye",
     "type": "casino",
     "ville": "Hendaye",
@@ -2298,7 +2210,7 @@
     "inscription": null
   },
   {
-    "id": "casino-131",
+    "id": "cas_131",
     "nom": "Casino Tranchant de Pau",
     "type": "casino",
     "ville": "Pau",
@@ -2308,18 +2220,14 @@
     "lng": -0.3435,
     "position_approximative": false,
     "exploitant": "Tranchant",
-    "poker": "cash",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-tranchant-pau/9346",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "2 tables de cash Hold'em (blinds 2/4, cave 100 €), page non datée à confirmer"
+    "inscription": null
   },
   {
-    "id": "casino-132",
+    "id": "cas_132",
     "nom": "Casino JOA de Saint-Jean-De-Luz",
     "type": "casino",
     "ville": "Saint-Jean-De-Luz",
@@ -2329,18 +2237,14 @@
     "lng": -1.6337,
     "position_approximative": false,
     "exploitant": "JOA",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-joa-saint-jean-de-luz/tournois-de-poker-et-cash-games/8509",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "2 tables de cash (blinds 1/2) du mercredi au dimanche, tournois ponctuels"
+    "inscription": null
   },
   {
-    "id": "casino-133",
+    "id": "cas_133",
     "nom": "Casino Partouche de Salies-De-Bearn",
     "type": "casino",
     "ville": "Salies-De-Bearn",
@@ -2357,7 +2261,7 @@
     "inscription": null
   },
   {
-    "id": "casino-134",
+    "id": "cas_134",
     "nom": "Casino Tranchant de Argeles-Gazost",
     "type": "casino",
     "ville": "Argeles-Gazost",
@@ -2374,7 +2278,7 @@
     "inscription": null
   },
   {
-    "id": "casino-135",
+    "id": "cas_135",
     "nom": "Casino Tranchant de Bagneres-De-Bigorre",
     "type": "casino",
     "ville": "Bagneres-De-Bigorre",
@@ -2391,7 +2295,7 @@
     "inscription": null
   },
   {
-    "id": "casino-136",
+    "id": "cas_136",
     "nom": "Casino Independant de Capvern",
     "type": "casino",
     "ville": "Capvern",
@@ -2408,7 +2312,7 @@
     "inscription": null
   },
   {
-    "id": "casino-137",
+    "id": "cas_137",
     "nom": "Casino JOA de Argeles-Plage",
     "type": "casino",
     "ville": "Argeles-Plage",
@@ -2425,7 +2329,7 @@
     "inscription": null
   },
   {
-    "id": "casino-138",
+    "id": "cas_138",
     "nom": "Casino Jaar de Amelie-Les-Bains",
     "type": "casino",
     "ville": "Amelie-Les-Bains",
@@ -2442,7 +2346,7 @@
     "inscription": null
   },
   {
-    "id": "casino-139",
+    "id": "cas_139",
     "nom": "Casino JOA de Canet-En-Roussillon",
     "type": "casino",
     "ville": "Canet-En-Roussillon",
@@ -2452,18 +2356,14 @@
     "lng": 3.002,
     "position_approximative": false,
     "exploitant": "JOA",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-joa-canet-en-roussillon/tournois-de-poker-et-cash-games/8513",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "3 tables de cash tous les soirs dès 21h (blinds 2/4), tournois réguliers, notamment le mercredi"
+    "inscription": null
   },
   {
-    "id": "casino-140",
+    "id": "cas_140",
     "nom": "Casino Stelsia de Collioure",
     "type": "casino",
     "ville": "Collioure",
@@ -2480,7 +2380,7 @@
     "inscription": null
   },
   {
-    "id": "casino-141",
+    "id": "cas_141",
     "nom": "Casino Jaar de Font-Romeu",
     "type": "casino",
     "ville": "Font-Romeu",
@@ -2497,7 +2397,7 @@
     "inscription": null
   },
   {
-    "id": "casino-142",
+    "id": "cas_142",
     "nom": "Casino JOA de Le Boulou",
     "type": "casino",
     "ville": "Le Boulou",
@@ -2507,18 +2407,14 @@
     "lng": 2.8328,
     "position_approximative": false,
     "exploitant": "JOA",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-joa-boulou/tournois-de-poker-et-cash-games/8516",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "2 tables de Hold'em No Limit tous les soirs (20h en semaine, 18h le week-end), petits tournois réguliers"
+    "inscription": null
   },
   {
-    "id": "casino-143",
+    "id": "cas_143",
     "nom": "Casino Jaar de Vernet-Les-Bains",
     "type": "casino",
     "ville": "Vernet-Les-Bains",
@@ -2535,7 +2431,7 @@
     "inscription": null
   },
   {
-    "id": "casino-144",
+    "id": "cas_144",
     "nom": "Casino JOA de Saint-Cyprien",
     "type": "casino",
     "ville": "Saint-Cyprien",
@@ -2552,7 +2448,7 @@
     "inscription": null
   },
   {
-    "id": "casino-145",
+    "id": "cas_145",
     "nom": "Casino Barrière de Niederbronn-Les-Bains",
     "type": "casino",
     "ville": "Niederbronn-Les-Bains",
@@ -2569,7 +2465,7 @@
     "inscription": null
   },
   {
-    "id": "casino-146",
+    "id": "cas_146",
     "nom": "Casino Barrière de Blotzheim",
     "type": "casino",
     "ville": "Blotzheim",
@@ -2586,7 +2482,7 @@
     "inscription": null
   },
   {
-    "id": "casino-147",
+    "id": "cas_147",
     "nom": "Casino Barrière de Ribeauville",
     "type": "casino",
     "ville": "Ribeauville",
@@ -2603,7 +2499,7 @@
     "inscription": null
   },
   {
-    "id": "casino-148",
+    "id": "cas_148",
     "nom": "Casino Partouche de La Tour-De-Salvagny",
     "type": "casino",
     "ville": "La Tour-De-Salvagny",
@@ -2613,22 +2509,14 @@
     "lng": 4.7129,
     "position_approximative": false,
     "exploitant": "Partouche",
-    "poker": "tournois",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": {
-      "type": "lien",
-      "valeur": "https://www.partouche.com/tournois-de-poker",
-      "libelle": "Voir la page du casino"
-    },
-    "source_poker": "https://www.partouche.com/tournois-de-poker",
-    "fiabilite_source": "officielle",
-    "date_verification": "2026-10-05",
-    "notes": "Cité sur la page tournois de Partouche (championnat de France), à confirmer pour le cash"
+    "inscription": null
   },
   {
-    "id": "casino-149",
+    "id": "cas_149",
     "nom": "Casino Partouche de Lyon",
     "type": "casino",
     "ville": "Lyon",
@@ -2645,7 +2533,7 @@
     "inscription": null
   },
   {
-    "id": "casino-150",
+    "id": "cas_150",
     "nom": "Casino JOA de Luxeuil-Les-Bains",
     "type": "casino",
     "ville": "Luxeuil-Les-Bains",
@@ -2662,7 +2550,7 @@
     "inscription": null
   },
   {
-    "id": "casino-151",
+    "id": "cas_151",
     "nom": "Casino Novomatic de Bourbon-Lancy",
     "type": "casino",
     "ville": "Bourbon-Lancy",
@@ -2679,7 +2567,7 @@
     "inscription": null
   },
   {
-    "id": "casino-152",
+    "id": "cas_152",
     "nom": "Casino Aix-Les-Bains de Aix-Les-Bains – Grand Cercle",
     "type": "casino",
     "ville": "Aix-Les-Bains",
@@ -2696,7 +2584,7 @@
     "inscription": null
   },
   {
-    "id": "casino-153",
+    "id": "cas_153",
     "nom": "Casino Aix-Les-Bains de Aix-Les-Bains – Poker Bowl",
     "type": "casino",
     "ville": "Aix-Les-Bains",
@@ -2713,7 +2601,7 @@
     "inscription": null
   },
   {
-    "id": "casino-154",
+    "id": "cas_154",
     "nom": "Casino Independant de Brides-Les-Bains",
     "type": "casino",
     "ville": "Brides-Les-Bains",
@@ -2730,7 +2618,7 @@
     "inscription": null
   },
   {
-    "id": "casino-155",
+    "id": "cas_155",
     "nom": "Casino Independant de Challes-Les-Eaux",
     "type": "casino",
     "ville": "Challes-Les-Eaux",
@@ -2747,7 +2635,7 @@
     "inscription": null
   },
   {
-    "id": "casino-156",
+    "id": "cas_156",
     "nom": "Casino Independant de Annecy",
     "type": "casino",
     "ville": "Annecy",
@@ -2764,7 +2652,7 @@
     "inscription": null
   },
   {
-    "id": "casino-157",
+    "id": "cas_157",
     "nom": "Casino Partouche de Annemasse",
     "type": "casino",
     "ville": "Annemasse",
@@ -2781,7 +2669,7 @@
     "inscription": null
   },
   {
-    "id": "casino-158",
+    "id": "cas_158",
     "nom": "Casino Independant de Chamonix",
     "type": "casino",
     "ville": "Chamonix",
@@ -2798,7 +2686,7 @@
     "inscription": null
   },
   {
-    "id": "casino-159",
+    "id": "cas_159",
     "nom": "Casino Independant de Evian-Les-Bains",
     "type": "casino",
     "ville": "Evian-Les-Bains",
@@ -2815,7 +2703,7 @@
     "inscription": null
   },
   {
-    "id": "casino-160",
+    "id": "cas_160",
     "nom": "Casino Stelsia de Megeve",
     "type": "casino",
     "ville": "Megeve",
@@ -2832,7 +2720,7 @@
     "inscription": null
   },
   {
-    "id": "casino-161",
+    "id": "cas_161",
     "nom": "Casino Tranchant de Saint-Gervais",
     "type": "casino",
     "ville": "Saint-Gervais",
@@ -2849,7 +2737,7 @@
     "inscription": null
   },
   {
-    "id": "casino-162",
+    "id": "cas_162",
     "nom": "Casino Independant de Saint-Julien-En-Genevois",
     "type": "casino",
     "ville": "Saint-Julien-En-Genevois",
@@ -2866,7 +2754,7 @@
     "inscription": null
   },
   {
-    "id": "casino-163",
+    "id": "cas_163",
     "nom": "Casino Partouche de Dieppe",
     "type": "casino",
     "ville": "Dieppe",
@@ -2876,18 +2764,14 @@
     "lng": 1.0838,
     "position_approximative": false,
     "exploitant": "Partouche",
-    "poker": "cash",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-partouche-dieppe/tournois-de-poker-cash-games/8542",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "3 tables de cash Texas Hold'em tous les soirs dès 21h (blinds 2/4), championnat annuel"
+    "inscription": null
   },
   {
-    "id": "casino-164",
+    "id": "cas_164",
     "nom": "Casino JOA de Etretat",
     "type": "casino",
     "ville": "Etretat",
@@ -2904,7 +2788,7 @@
     "inscription": null
   },
   {
-    "id": "casino-165",
+    "id": "cas_165",
     "nom": "Casino JOA de Fecamp",
     "type": "casino",
     "ville": "Fecamp",
@@ -2921,7 +2805,7 @@
     "inscription": null
   },
   {
-    "id": "casino-166",
+    "id": "cas_166",
     "nom": "Casino Partouche de Forges-Les-Eaux",
     "type": "casino",
     "ville": "Forges-Les-Eaux",
@@ -2931,22 +2815,14 @@
     "lng": 1.5644,
     "position_approximative": false,
     "exploitant": "Partouche",
-    "poker": "cash",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": {
-      "type": "lien",
-      "valeur": "https://domaine-de-forges.partouche.com/games/game/texas-hold-em-poker",
-      "libelle": "Voir la page du casino"
-    },
-    "source_poker": "https://domaine-de-forges.partouche.com/games/game/texas-hold-em-poker",
-    "fiabilite_source": "officielle",
-    "date_verification": "2026-10-05",
-    "notes": "2 tables (cave 200, blinds 5/5) vendredi et samedi 20h-4h, dimanche 20h-3h"
+    "inscription": null
   },
   {
-    "id": "casino-167",
+    "id": "cas_167",
     "nom": "Casino Partouche de Le Havre",
     "type": "casino",
     "ville": "Le Havre",
@@ -2963,7 +2839,7 @@
     "inscription": null
   },
   {
-    "id": "casino-168",
+    "id": "cas_168",
     "nom": "Casino JOA de Le Treport",
     "type": "casino",
     "ville": "Le Treport",
@@ -2980,7 +2856,7 @@
     "inscription": null
   },
   {
-    "id": "casino-169",
+    "id": "cas_169",
     "nom": "Casino Independant de Saint-Valery-En-Caux",
     "type": "casino",
     "ville": "Saint-Valery-En-Caux",
@@ -2997,7 +2873,7 @@
     "inscription": null
   },
   {
-    "id": "casino-170",
+    "id": "cas_170",
     "nom": "Casino Independant de Veulettes-Sur-Mer",
     "type": "casino",
     "ville": "Veulettes-Sur-Mer",
@@ -3014,7 +2890,7 @@
     "inscription": null
   },
   {
-    "id": "casino-171",
+    "id": "cas_171",
     "nom": "Casino Tranchant de Yport",
     "type": "casino",
     "ville": "Yport",
@@ -3031,7 +2907,7 @@
     "inscription": null
   },
   {
-    "id": "casino-172",
+    "id": "cas_172",
     "nom": "Casino Independant de Cayeux-Sur-Mer",
     "type": "casino",
     "ville": "Cayeux-Sur-Mer",
@@ -3048,7 +2924,7 @@
     "inscription": null
   },
   {
-    "id": "casino-173",
+    "id": "cas_173",
     "nom": "Casino Novomatic de Fort-Mahon-Plage",
     "type": "casino",
     "ville": "Fort-Mahon-Plage",
@@ -3065,7 +2941,7 @@
     "inscription": null
   },
   {
-    "id": "casino-174",
+    "id": "cas_174",
     "nom": "Casino Independant de Mers-Les-Bains",
     "type": "casino",
     "ville": "Mers-Les-Bains",
@@ -3082,7 +2958,7 @@
     "inscription": null
   },
   {
-    "id": "casino-175",
+    "id": "cas_175",
     "nom": "Casino Independant de Lacaune",
     "type": "casino",
     "ville": "Lacaune",
@@ -3099,7 +2975,7 @@
     "inscription": null
   },
   {
-    "id": "casino-176",
+    "id": "cas_176",
     "nom": "Casino Partouche de Bandol",
     "type": "casino",
     "ville": "Bandol",
@@ -3116,7 +2992,7 @@
     "inscription": null
   },
   {
-    "id": "casino-177",
+    "id": "cas_177",
     "nom": "Casino Raineau de Cavalaire-Sur-Mer",
     "type": "casino",
     "ville": "Cavalaire-Sur-Mer",
@@ -3133,7 +3009,7 @@
     "inscription": null
   },
   {
-    "id": "casino-178",
+    "id": "cas_178",
     "nom": "Casino Novomatic de Frejus",
     "type": "casino",
     "ville": "Frejus",
@@ -3150,7 +3026,7 @@
     "inscription": null
   },
   {
-    "id": "casino-179",
+    "id": "cas_179",
     "nom": "Casino Partouche de Hyeres",
     "type": "casino",
     "ville": "Hyeres",
@@ -3167,7 +3043,7 @@
     "inscription": null
   },
   {
-    "id": "casino-180",
+    "id": "cas_180",
     "nom": "Casino JOA de La Seyne-Sur-Mer",
     "type": "casino",
     "ville": "La Seyne-Sur-Mer",
@@ -3184,7 +3060,7 @@
     "inscription": null
   },
   {
-    "id": "casino-181",
+    "id": "cas_181",
     "nom": "Casino Novomatic de Sanary",
     "type": "casino",
     "ville": "Sanary",
@@ -3201,7 +3077,7 @@
     "inscription": null
   },
   {
-    "id": "casino-182",
+    "id": "cas_182",
     "nom": "Casino Barrière de Sainte-Maxime",
     "type": "casino",
     "ville": "Sainte-Maxime",
@@ -3218,7 +3094,7 @@
     "inscription": null
   },
   {
-    "id": "casino-183",
+    "id": "cas_183",
     "nom": "Casino Barrière de Saint-Raphael",
     "type": "casino",
     "ville": "Saint-Raphael",
@@ -3235,7 +3111,7 @@
     "inscription": null
   },
   {
-    "id": "casino-184",
+    "id": "cas_184",
     "nom": "Casino Independant de La-Faute-Sur-Mer",
     "type": "casino",
     "ville": "La-Faute-Sur-Mer",
@@ -3252,7 +3128,7 @@
     "inscription": null
   },
   {
-    "id": "casino-185",
+    "id": "cas_185",
     "nom": "Casino Novomatic de Les Sables D'Olonne – Les Atlantes",
     "type": "casino",
     "ville": "Les Sables D'Olonne",
@@ -3269,7 +3145,7 @@
     "inscription": null
   },
   {
-    "id": "casino-186",
+    "id": "cas_186",
     "nom": "Casino JOA de Les Sables D'Olonne – Les Pins",
     "type": "casino",
     "ville": "Les Sables D'Olonne",
@@ -3286,7 +3162,7 @@
     "inscription": null
   },
   {
-    "id": "casino-187",
+    "id": "cas_187",
     "nom": "Casino Cogit de Saint-Gilles-Croix-De-Vie",
     "type": "casino",
     "ville": "Saint-Gilles-Croix-De-Vie",
@@ -3303,7 +3179,7 @@
     "inscription": null
   },
   {
-    "id": "casino-188",
+    "id": "cas_188",
     "nom": "Casino JOA de Saint-Jean-De-Monts",
     "type": "casino",
     "ville": "Saint-Jean-De-Monts",
@@ -3320,7 +3196,7 @@
     "inscription": null
   },
   {
-    "id": "casino-189",
+    "id": "cas_189",
     "nom": "Casino Partouche de La Roche-Posay",
     "type": "casino",
     "ville": "La Roche-Posay",
@@ -3337,7 +3213,7 @@
     "inscription": null
   },
   {
-    "id": "casino-190",
+    "id": "cas_190",
     "nom": "Casino Novomatic de Bussang",
     "type": "casino",
     "ville": "Bussang",
@@ -3354,7 +3230,7 @@
     "inscription": null
   },
   {
-    "id": "casino-191",
+    "id": "cas_191",
     "nom": "Casino Partouche de Contrexeville",
     "type": "casino",
     "ville": "Contrexeville",
@@ -3371,7 +3247,7 @@
     "inscription": null
   },
   {
-    "id": "casino-192",
+    "id": "cas_192",
     "nom": "Casino JOA de Gerardmer",
     "type": "casino",
     "ville": "Gerardmer",
@@ -3381,18 +3257,14 @@
     "lng": 6.8531,
     "position_approximative": false,
     "exploitant": "JOA",
-    "poker": "les_deux",
+    "poker": "a_verifier",
     "gratuit": false,
     "prix": "À renseigner",
     "quand": "À renseigner",
-    "inscription": null,
-    "source_poker": "https://www.casinosavenue.com/fr/casino/casino-joa-gerardmer/tournois-de-poker-et-cash-games/8506",
-    "fiabilite_source": "secondaire",
-    "date_verification": "2026-10-05",
-    "notes": "2 tables de cash (blinds 1/2 en semaine, 2/4 le week-end), fermées le lundi, quelques tournois"
+    "inscription": null
   },
   {
-    "id": "casino-193",
+    "id": "cas_193",
     "nom": "Casino Partouche de Plombieres-Les-Bains",
     "type": "casino",
     "ville": "Plombieres-Les-Bains",
@@ -3409,7 +3281,7 @@
     "inscription": null
   },
   {
-    "id": "casino-194",
+    "id": "cas_194",
     "nom": "Casino Novomatic de Vittel",
     "type": "casino",
     "ville": "Vittel",
@@ -3426,7 +3298,7 @@
     "inscription": null
   },
   {
-    "id": "casino-195",
+    "id": "cas_195",
     "nom": "Casino Barrière de Enghien-Les-Bains",
     "type": "casino",
     "ville": "Enghien-Les-Bains",
@@ -3443,7 +3315,7 @@
     "inscription": null
   },
   {
-    "id": "casino-196",
+    "id": "cas_196",
     "nom": "Casino Cogit de Gosier-Les-Bains",
     "type": "casino",
     "ville": "Gosier-Les-Bains",
@@ -3460,7 +3332,7 @@
     "inscription": null
   },
   {
-    "id": "casino-197",
+    "id": "cas_197",
     "nom": "Casino Cogit de Saint-François",
     "type": "casino",
     "ville": "Saint-François",
@@ -3477,7 +3349,7 @@
     "inscription": null
   },
   {
-    "id": "casino-198",
+    "id": "cas_198",
     "nom": "Casino Cogit de Les Trois Ilets",
     "type": "casino",
     "ville": "Les Trois Ilets",
@@ -3494,7 +3366,7 @@
     "inscription": null
   },
   {
-    "id": "casino-199",
+    "id": "cas_199",
     "nom": "Casino Cogit de Schoelcher",
     "type": "casino",
     "ville": "Schoelcher",
@@ -3511,7 +3383,7 @@
     "inscription": null
   },
   {
-    "id": "casino-200",
+    "id": "cas_200",
     "nom": "Casino Independant de Saint-Denis",
     "type": "casino",
     "ville": "Saint-Denis",
@@ -3528,7 +3400,7 @@
     "inscription": null
   },
   {
-    "id": "casino-201",
+    "id": "cas_201",
     "nom": "Casino Independant de Saint-Gilles",
     "type": "casino",
     "ville": "Saint-Gilles",
@@ -3545,7 +3417,7 @@
     "inscription": null
   },
   {
-    "id": "casino-202",
+    "id": "cas_202",
     "nom": "Casino Independant de Saint-Pierre",
     "type": "casino",
     "ville": "Saint-Pierre",

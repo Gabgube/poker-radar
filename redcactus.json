@@ -501,7 +501,7 @@
         "name": "L’Entrepôtes (94)",
         "isNew": false,
         "isPremium": false,
-        "quand": "Lundi 5 octobre 2026 19:30"
+        "quand": "Mercredi 7 octobre 2026 19:30"
       },
       "id": 916
     },
@@ -555,7 +555,7 @@
         "name": "City Game",
         "isNew": false,
         "isPremium": false,
-        "quand": "Lundi 5 octobre 2026 20:30"
+        "quand": "Mardi 6 octobre 2026 20:30"
       },
       "id": 1051
     },
@@ -807,7 +807,7 @@
         "name": "Le Sputnik",
         "isNew": false,
         "isPremium": false,
-        "quand": "Dimanche 4 octobre 2026 17:00"
+        "quand": "Dimanche 11 octobre 2026 17:00"
       },
       "id": 1251
     },
@@ -1347,7 +1347,7 @@
         "name": "Seven Seas",
         "isNew": false,
         "isPremium": true,
-        "quand": "Dimanche 4 octobre 2026 19:30"
+        "quand": "Jeudi 8 octobre 2026 19:30"
       },
       "id": 1430
     },
@@ -1617,7 +1617,7 @@
         "name": "Chope et Compagnie (Caen)",
         "isNew": false,
         "isPremium": true,
-        "quand": "Samedi 3 octobre 2026 15:00"
+        "quand": "Mardi 6 octobre 2026 18:30"
       },
       "id": 1489
     },
@@ -1653,7 +1653,7 @@
         "name": "Orge et Houblon (Eysines)",
         "isNew": false,
         "isPremium": false,
-        "quand": "Lundi 5 octobre 2026 19:30"
+        "quand": "Mardi 6 octobre 2026 19:30"
       },
       "id": 1495
     },
@@ -1761,7 +1761,7 @@
         "name": "Les Gamins",
         "isNew": false,
         "isPremium": false,
-        "quand": "Lundi 5 octobre 2026 20:00"
+        "quand": "Mercredi 7 octobre 2026 19:30"
       },
       "id": 1512
     },
@@ -1869,7 +1869,7 @@
         "name": "Le QG d'Amilis",
         "isNew": false,
         "isPremium": false,
-        "quand": "Tous les samedis"
+        "quand": "Tournois réguliers"
       },
       "id": 1531
     },
@@ -2067,7 +2067,7 @@
         "name": "Les Fringants",
         "isNew": false,
         "isPremium": true,
-        "quand": "Samedi 3 octobre 2026 11:00"
+        "quand": "Mardi 6 octobre 2026 19:30"
       },
       "id": 1571
     },
@@ -2193,7 +2193,7 @@
         "name": "Au Kilhou Koz",
         "isNew": false,
         "isPremium": true,
-        "quand": "Dimanche 4 octobre 2026 18:00"
+        "quand": "Jeudi 8 octobre 2026 20:00"
       },
       "id": 1596
     },
@@ -2751,7 +2751,7 @@
         "name": "J'peux pas j'ai poney",
         "isNew": false,
         "isPremium": true,
-        "quand": "Dimanche 4 octobre 2026 17:30"
+        "quand": "Mercredi 7 octobre 2026 19:00"
       },
       "id": 1684
     },
@@ -3291,7 +3291,7 @@
         "name": "Driver's Club",
         "isNew": false,
         "isPremium": true,
-        "quand": "Lundi 5 octobre 2026 19:00"
+        "quand": "Mercredi 7 octobre 2026 19:00"
       },
       "id": 1748
     },
@@ -3543,7 +3543,7 @@
         "name": "Brasserie Le Netter",
         "isNew": false,
         "isPremium": true,
-        "quand": "Lundi 5 octobre 2026 19:30"
+        "quand": "Vendredi 9 octobre 2026 19:30"
       },
       "id": 1771
     },
@@ -4155,7 +4155,7 @@
         "name": "Pixels Café (Liege)",
         "isNew": false,
         "isPremium": true,
-        "quand": "Dimanche 4 octobre 2026 16:00"
+        "quand": "Jeudi 8 octobre 2026 19:00"
       },
       "id": 1849
     },
@@ -4371,7 +4371,7 @@
         "name": "Bowling De Provins",
         "isNew": false,
         "isPremium": true,
-        "quand": "Lundi 5 octobre 2026 19:30"
+        "quand": "Jeudi 8 octobre 2026 19:30"
       },
       "id": 1871
     },
@@ -4569,7 +4569,7 @@
         "name": "Bowling de Rambouillet",
         "isNew": false,
         "isPremium": true,
-        "quand": "Lundi 5 octobre 2026 19:30"
+        "quand": "Jeudi 8 octobre 2026 19:30"
       },
       "id": 1893
     },
@@ -4857,7 +4857,7 @@
         "name": "Billard Club de la Vallée du Lot",
         "isNew": false,
         "isPremium": true,
-        "quand": "Samedi 3 octobre 2026 18:30"
+        "quand": "Samedi 10 octobre 2026 18:30"
       },
       "id": 1916
     },
@@ -4914,24 +4914,6 @@
         "quand": "Tournois réguliers"
       },
       "id": 1922
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.076944,
-          49.360255
-        ]
-      },
-      "properties": {
-        "type": "bar",
-        "name": "Chez Clairon",
-        "isNew": false,
-        "isPremium": true,
-        "quand": "Tournois réguliers"
-      },
-      "id": 1923
     },
     {
       "type": "Feature",
@@ -5379,7 +5361,7 @@
         "name": "Chope et Compagnie (Avignon)",
         "isNew": false,
         "isPremium": false,
-        "quand": "Dimanche 4 octobre 2026 17:00"
+        "quand": "Dimanche 11 octobre 2026 17:00"
       },
       "id": 1968
     },
@@ -6729,7 +6711,7 @@
         "name": "Set & Smash",
         "isNew": false,
         "isPremium": true,
-        "quand": "Lundi 5 octobre 2026 19:30"
+        "quand": "Jeudi 8 octobre 2026 19:30"
       },
       "id": 2071
     },
@@ -7017,7 +6999,7 @@
         "name": "Le Manneken Pis",
         "isNew": false,
         "isPremium": true,
-        "quand": "Lundi 5 octobre 2026 19:00"
+        "quand": "Mardi 6 octobre 2026 19:00"
       },
       "id": 2088
     },
@@ -8115,7 +8097,7 @@
         "name": "Lairrial",
         "isNew": false,
         "isPremium": true,
-        "quand": "Samedi 3 octobre 2026 18:00"
+        "quand": "Jeudi 8 octobre 2026 19:30"
       },
       "id": 2165
     },
@@ -10239,7 +10221,7 @@
         "name": "Le City (Le Havre)",
         "isNew": true,
         "isPremium": true,
-        "quand": "Dimanche 4 octobre 2026 15:00"
+        "quand": "Jeudi 8 octobre 2026 19:00"
       },
       "id": 2290
     },
@@ -11616,24 +11598,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.455981,
-          48.749025
-        ]
-      },
-      "properties": {
-        "type": "bar",
-        "name": "Au Fût (Lannion)",
-        "isNew": true,
-        "isPremium": true,
-        "quand": "Tournois réguliers"
-      },
-      "id": 2367
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           5.889695,
           45.271681
         ]
@@ -11670,442 +11634,54 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.441218,
-          48.862336
+          -0.962401,
+          46.387956
         ]
       },
       "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale ILE-DE-FRANCE ZONE B - Printemps / Été 2026",
-        "startDate": "2026-10-03T09:30:00+02:00",
-        "quand": "Tournois réguliers"
+        "type": "bar",
+        "name": "O'Comptoir du Marais",
+        "isNew": true,
+        "isPremium": true,
+        "quand": "Tous les vendredis"
       },
-      "id": 281
+      "id": 2370
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.788598,
-          48.817224
+          -0.843748,
+          47.072928
         ]
       },
       "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale GRAND-EST ZONE B - Printemps / Été 2026",
-        "startDate": "2026-10-03T09:30:00+02:00",
+        "type": "bar",
+        "name": "Buffalo Grill (Cholet)",
+        "isNew": true,
+        "isPremium": true,
         "quand": "Tous les lundis"
       },
-      "id": 287
+      "id": 2371
     },
     {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.155734,
-          49.023224
+          -1.025237,
+          46.875679
         ]
       },
       "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale ILE-DE-FRANCE ZONE A - Printemps / Été 2026",
-        "startDate": "2026-10-04T10:30:00+02:00",
-        "quand": "Tournois réguliers"
+        "type": "bar",
+        "name": "Buffalo Grill (Les Herbiers)",
+        "isNew": true,
+        "isPremium": true,
+        "quand": "Tous les mercredis"
       },
-      "id": 280
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.384729,
-          48.951216
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale GRAND-EST ZONE A - Printemps / Été 2026",
-        "startDate": "2026-10-04T10:30:00+02:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 286
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.629981,
-          50.665041
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale BELGIQUE - Printemps / Été 2026",
-        "startDate": "2026-10-10T09:30:00+02:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 284
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.569915,
-          44.895039
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale SUD-OUEST ZONE B - Printemps / Été 2026",
-        "startDate": "2026-10-10T12:30:00+02:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 282
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.315188,
-          45.673808
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale SUD-OUEST ZONE C - Printemps / Été 2026",
-        "startDate": "2026-10-11T10:30:00+02:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 276
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.1314,
-          50.619317
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale NORD ZONE B - Printemps / Été 2026",
-        "startDate": "2026-10-11T10:30:00+02:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 285
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.80821,
-          47.00588
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale NORD-OUEST ZONE A - Printemps / Été 2026",
-        "startDate": "2026-10-17T09:30:00+02:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 277
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.360069,
-          43.837425
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale SUD - Printemps / Été 2026",
-        "startDate": "2026-10-17T09:30:00+02:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 288
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -3.389108,
-          47.725064
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale NORD-OUEST ZONE B - Printemps / Été 2026",
-        "startDate": "2026-10-18T10:30:00+02:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 278
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.379476,
-          43.668467
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale SUD-OUEST ZONE A - Printemps / Été 2026",
-        "startDate": "2026-10-18T10:30:00+02:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 283
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.636183,
-          45.292842
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale SUD-EST - Printemps / Été 2026",
-        "startDate": "2026-10-24T09:30:00+02:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 289
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.739923,
-          47.3577
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale CENTRE-OUEST - Printemps / Été 2026",
-        "startDate": "2026-10-24T09:30:00+02:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 293
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.398241,
-          48.110855
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale NORD-OUEST ZONE C - Printemps / Été 2026",
-        "startDate": "2026-10-25T10:30:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 279
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.035454,
-          47.319122
-        ]
-      },
-      "properties": {
-        "type": "semi-final",
-        "name": "Finale Régionale CENTRE-EST - Printemps / Été 2026",
-        "startDate": "2026-10-25T10:30:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 292
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.96954,
-          50.406241
-        ]
-      },
-      "properties": {
-        "type": "pre-main-final",
-        "name": "Demi Finale NORD & EST 2 - EDITION 16",
-        "startDate": "2026-11-15T09:00:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 1
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.96954,
-          50.406241
-        ]
-      },
-      "properties": {
-        "type": "pre-main-final",
-        "name": "Demi Finale NORD & EST 1 - EDITION 16",
-        "startDate": "2026-11-14T09:00:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 2
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.181609,
-          47.364814
-        ]
-      },
-      "properties": {
-        "type": "pre-main-final",
-        "name": "Demi Finale NORD-OUEST 2 - EDITION 16",
-        "startDate": "2026-11-15T09:00:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 3
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0,
-          0
-        ]
-      },
-      "properties": {
-        "type": "pre-main-final",
-        "name": "Demi Finale NORD-OUEST 1 - EDITION 16",
-        "startDate": "2026-11-14T09:00:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 4
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.176576,
-          49.004535
-        ]
-      },
-      "properties": {
-        "type": "pre-main-final",
-        "name": "Demi Finale ILE-DE-FRANCE 2 - EDITION 16",
-        "startDate": "2026-11-29T09:00:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 5
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.96954,
-          50.406241
-        ]
-      },
-      "properties": {
-        "type": "pre-main-final",
-        "name": "Demi Finale ILE-DE-FRANCE 1 - EDITION 16",
-        "startDate": "2026-11-28T09:00:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 6
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.886354,
-          46.216722
-        ]
-      },
-      "properties": {
-        "type": "pre-main-final",
-        "name": "Demi Finale SUD-OUEST 2 - EDITION 16",
-        "startDate": "2026-11-22T09:00:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 7
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.886354,
-          46.216722
-        ]
-      },
-      "properties": {
-        "type": "pre-main-final",
-        "name": "Demi Finale SUD-OUEST 1 - EDITION 16",
-        "startDate": "2026-11-21T09:00:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 8
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.618428,
-          45.302651
-        ]
-      },
-      "properties": {
-        "type": "pre-main-final",
-        "name": "Demi Finale SUD-EST 2 - EDITION 16",
-        "startDate": "2026-11-22T09:00:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 9
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.618428,
-          45.302651
-        ]
-      },
-      "properties": {
-        "type": "pre-main-final",
-        "name": "Demi Finale SUD-EST 1 - EDITION 16",
-        "startDate": "2026-11-21T09:00:00+01:00",
-        "quand": "Tournois réguliers"
-      },
-      "id": 10
+      "id": 2372
     }
   ]
 }
