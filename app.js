@@ -1,28 +1,45 @@
 // --- 1. Configuration initiale ---
 
 const TYPES = {
-  bar:        { nom: "Bar Red Cactus", couleur: "#c8372d" },
-  casino:     { nom: "Casino", couleur: "#16211c" },
-  caritatif:  { nom: "Tournoi caritatif", couleur: "#2e7d5b" }
+  bar:       { nom: "Bar Red Cactus", couleur: "#c8372d" },
+  casino:    { nom: "Casino", couleur: "#16211c" },
+  caritatif: { nom: "Tournoi caritatif", couleur: "#2e7d5b" }
 };
 
-const esc = s => String(s || '').replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const esc = s => String(s || '').replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&quot;","'":"&#39;"}[c]));
 
 let lieux = [];
 
-// --- 2. Fonctions d'affichage HTML (Bouton et Détails) ---
+// --- 2. Fonctions d'affichage HTML (Boutons et Détails) ---
 
 function boutonInscription(l) {
-  // Lien spécifique (ex: billetterie caritatif)
+  let boutonsHtml = "";
+
+  // 1. Bouton principal d'information / réservation
   if (l.inscription && l.inscription.valeur) {
-    return `<a class="btn" href="${esc(l.inscription.valeur)}" target="_blank" rel="noopener noreferrer">${esc(l.inscription.libelle || "En savoir plus")}</a>`;
+    const libelle = l.inscription.libelle || (l.type === "caritatif" ? "Voir le tournoi" : "En savoir plus");
+    boutonsHtml += `<a class="btn" href="${esc(l.inscription.valeur)}" target="_blank" rel="noopener noreferrer">${esc(libelle)}</a>`;
+  } else if (l.url) {
+    let libelle = "En savoir plus";
+    if (l.type === "casino") libelle = "Voir le casino";
+    else if (l.type === "caritatif") libelle = "Voir le tournoi";
+    else libelle = "Voir la page du bar";
+
+    boutonsHtml += `<a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(libelle)}</a>`;
+  } else if (l.type === "bar") {
+    const urlBase = "https://poker.redcactus.fr"; 
+    const rawId = String(l.id).replace(/^rc_/, '');
+    const url = rawId ? `${urlBase}/bar/${rawId}` : urlBase;
+    boutonsHtml += `<a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">Voir la page du bar</a>`;
   }
-  
-  // Lien par défaut pour Red Cactus
-  const urlBase = "https://poker.redcactus.fr"; 
-  const rawId = String(l.id).replace(/^rc_/, '');
-  const url = rawId ? `${urlBase}/bar/${rawId}` : urlBase;
-  return `<a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">Voir la page du bar</a>`;
+
+  // 2. Bouton GPS "Y aller" Google Maps
+  if (typeof l.lat === "number" && typeof l.lng === "number") {
+    const urlMaps = `https://www.google.com/maps/dir/?api=1&destination=${l.lat},${l.lng}`;
+    boutonsHtml += ` <a class="btn btn-maps" href="${urlMaps}" target="_blank" rel="noopener noreferrer"> Y aller</a>`;
+  }
+
+  return boutonsHtml;
 }
 
 function details(l) {
@@ -41,14 +58,28 @@ function details(l) {
 
 // --- 3. Initialisation Leaflet ---
 
-const map = L.map("map").setView([46.6, 2.5], 6);
+// Coordonnées de cadrage pour la France métropolitaine
+const LIMITES_FRANCE = [[41.3, -5.2], [51.1, 9.6]];
+
+const map = L.map("map").fitBounds(LIMITES_FRANCE);
 
 L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
   maxZoom: 19,
   attribution: 'Tiles &copy; Esri &mdash; Source: Esri, HERE, Garmin, OpenStreetMap contributors'
 }).addTo(map);
 
-const layer = L.markerClusterGroup().addTo(map);
+const layer = L.markerClusterGroup({
+  iconCreateFunction: function(cluster) {
+    const count = cluster.getChildCount();
+    return L.divIcon({
+      html: `<div><span>${count}</span></div>`,
+      className: 'custom-cluster',
+      iconSize: [40, 40],
+      iconAnchor: [20, 20]
+    });
+  }
+}).addTo(map);
+
 
 // --- 4. Fonction principale de filtrage et d'affichage ---
 
@@ -62,11 +93,7 @@ function afficher() {
   const filtres = lieux.filter(l => {
     let correspondType = true;
     if (type) {
-      if (type === "bar") {
-        correspondType = (l.type === "bar");
-      } else {
-        correspondType = (l.type === type);
-      }
+      correspondType = (l.type === type);
     }
 
     let correspondPrix = true;
@@ -115,7 +142,7 @@ function afficher() {
   });
 
   if (filtres.length) {
-    map.fitBounds(L.latLngBounds(filtres.map(l => [l.lat, l.lng])), { padding: [50, 50], maxZoom: 10 });
+    map.fitBounds(LIMITES_FRANCE, { padding: [20, 20] });
   }
 }
 
@@ -143,7 +170,9 @@ Promise.all([
   chargerJSON("caritatifs.json")
 ]).then(([dataRC, dataCasinos, dataCaritatifs]) => {
 
-  // 1. Red Cactus (GeoJSON conversion)
+  const aujourdhui = new Date().toISOString().split('T')[0];
+
+  // 1. Red Cactus
   const rawFeatures = dataRC.features || (Array.isArray(dataRC) ? dataRC : []);
   const redCactusFormates = rawFeatures
     .filter(f => {
@@ -161,19 +190,27 @@ Promise.all([
           lat: lat,
           lng: lng,
           isNew: props.isNew || false,
-          adresse: props.adresse || "",
+          adresse: props.adresse || props.address || "",
           quand: props.quand || "Tournois réguliers",
           prix: props.prix || "Gratuit",
-          gratuit: true
+          gratuit: true,
+          url: props.url || ""
         };
       }
       return null;
     })
     .filter(f => f && typeof f.lat === "number" && typeof f.lng === "number");
 
-  // 2. Casinos & Caritatifs (filtrage des coordonnées uniquement)
-  const casinosValides = dataCasinos.filter(c => typeof c.lat === "number" && typeof c.lng === "number");
-  const caritatifsValides = dataCaritatifs.filter(c => typeof c.lat === "number" && typeof c.lng === "number");
+  // 2. Casinos
+  const casinosValides = dataCasinos
+    .filter(c => typeof c.lat === "number" && typeof c.lng === "number")
+    .map(c => ({ ...c, type: "casino", gratuit: false }));
+
+  // 3. Tournois caritatifs (avec filtre de date d'expiration)
+  const caritatifsValides = dataCaritatifs
+    .filter(c => typeof c.lat === "number" && typeof c.lng === "number")
+    .filter(c => !c.date || c.date >= aujourdhui) // Élimine les tournois passés
+    .map(c => ({ ...c, type: "caritatif" }));
 
   // Fusion globale
   lieux = [...redCactusFormates, ...casinosValides, ...caritatifsValides];
