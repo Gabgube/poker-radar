@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Où jouer au poker en France</title>
   
-  <!-- Polices Google (remets tes liens originaux ici) -->
+  <!-- Polices Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
   
-  <!-- CSS de Leaflet et MarkerCluster (remets tes liens originaux ici) -->
+  <!-- CSS de Leaflet et MarkerCluster -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css">
 
   <!-- Lien vers TON fichier CSS -->
   <link rel="stylesheet" href="styles.css">
-  
+
 </head>
 <body>
   <!-- En-tête de la page -->
@@ -37,7 +37,7 @@
             <option value="">Tous les types</option>
             <option value="bar">Red Cactus</option>
             <option value="casino">Casinos</option>
-            <option value="caritatif">Caritatifs</option> <!-- À ajouter -->
+            <option value="caritatif">Caritatifs</option>
           </select>
           </select>
         </label>
@@ -71,7 +71,7 @@
       <button type="button" id="dlg-close">Fermer</button>
     </div>
     <div class="dlg-corps">
-      <p id="dlg-msg" hidden>Le formulaire n'est pas encore configuré. Remplace le lien dans le script en bas de la page.</p>
+      <p id="dlg-msg" hidden>Le formulaire n'est pas encore configuré.</p>
       <iframe id="dlg-frame" title="Formulaire pour proposer un tournoi caritatif" hidden></iframe>
       <a id="dlg-lien" href="#" target="_blank" rel="noopener noreferrer" hidden>Ouvrir le formulaire dans un nouvel onglet</a>
     </div>
@@ -87,7 +87,6 @@
   <!-- Ouverture du formulaire des organisateurs -->
   <script>
     (function () {
-      // 1) Colle ici le lien d'intégration de ton formulaire (voir les explications)
       const URL_FORMULAIRE = "https://docs.google.com/forms/d/e/1FAIpQLSd1D3HN-joemrjvV5pYSA-wbXtF3-YDajahuXe4At9rseTJIA/viewform?usp=dialog";
 
       const dlg = document.getElementById("dlg-tournoi");
