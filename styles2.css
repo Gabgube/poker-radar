@@ -1,12 +1,12 @@
 /* --- 1. Variables & Palette Neutre --- */
 :root {
-  --brand-header: #064e3b; /* Vert tapis sombre (identité du site) */
-  --btn-primary: #064e3b;  /* Boutons principaux */
-  --btn-hover: #047557;    /* Survol boutons */
+  --brand-header: #111827; /* Anthracite sombre structurant */
+  --btn-primary: #1e293b;  /* Neutre pour les boutons principaux */
+  --btn-hover: #334155;
   
-  --ink: #0f172a;          /* Texte principal */
+  --ink: #0f172a;          /* Texte principal neutre */
   --muted: #64748b;        /* Texte secondaire */
-  --bg: #064e3b;           /* Fond de page léger */
+  --bg: #f8fafc;           /* Fond de page léger */
   --surface: #ffffff;      /* Surface des cartes et panneaux */
   --line: #e2e8f0;         /* Séparateurs */
   --radius: 8px;
@@ -53,7 +53,7 @@ header h1 {
 header p {
   margin: 2px 0 0;
   font-size: 0.85rem;
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 footer {
@@ -141,9 +141,10 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
   align-content: start;
 }
 
+/* Cartes : texte neutre, seule la bordure gauche prend la couleur du type */
 .card {
   border: 1px solid var(--line);
-  border-left: 5px solid var(--c);
+  border-left: 5px solid var(--c); /* Seul élément coloré */
   border-radius: var(--radius);
   padding: 14px;
   cursor: pointer;
@@ -161,7 +162,7 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
   margin: 0 0 6px;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--ink); /* Titre toujours neutre */
 }
 
 .meta {
@@ -172,6 +173,7 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
 }
 
 /* --- 6. Badges & Boutons --- */
+/* Badges sobres sans texte coloré */
 .tag {
   display: inline-block;
   font-size: 0.72rem;
@@ -204,13 +206,12 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
   background: var(--btn-hover);
 }
 
-/* Boutons GPS identiques aux boutons du site */
 .btn-maps {
-  background: var(--btn-primary);
+  background: #15803d;
 }
 
 .btn-maps:hover {
-  background: var(--btn-hover);
+  background: #166534;
 }
 
 .btn-proposer {
@@ -286,7 +287,7 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--c);
+  background: var(--c); /* Couleur du jeton */
   border: 2px solid #ffffff;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
 }

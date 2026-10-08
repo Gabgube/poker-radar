@@ -4,6 +4,7 @@ import time
 import urllib.request
 import urllib.parse
 import ssl
+from datetime import datetime
 
 # Contournement SSL si besoin
 ssl_context = ssl._create_unverified_context()
@@ -15,6 +16,34 @@ print("Téléchargement des réponses Google Forms...")
 
 caritatifs_json = []
 
+def normaliser_date(date_str):
+    """
+    Convertit n'importe quelle date en format ISO (YYYY-MM-DD).
+    Prend en charge les formats DD/MM/YYYY, YYYY-MM-DD, DD-MM-YYYY, etc.
+    """
+    if not date_str:
+        return ""
+    
+    date_clean = date_str.strip()
+    
+    # Formats à essayer
+    formats = [
+        "%d/%m/%Y",  # 16/10/2026
+        "%Y-%m-%d",  # 2026-10-16
+        "%d-%m-%Y",  # 16-10-2026
+        "%d/%m/%y",  # 16/10/26
+    ]
+    
+    for fmt in formats:
+        try:
+            dt = datetime.strptime(date_clean, fmt)
+            return dt.strftime("%Y-%m-%d")  # Sortie ISO
+        except ValueError:
+            continue
+            
+    # Si aucun format ne correspond, on retourne la valeur nettoyée par sécurité
+    return date_clean
+
 try:
     req = urllib.request.Request(SHEET_CSV_URL, headers={'User-Agent': 'Mozilla/5.0'})
     with urllib.request.urlopen(req, context=ssl_context) as response:
@@ -22,20 +51,36 @@ try:
         reader = csv.DictReader(lines)
 
         for idx, raw_row in enumerate(reader, 1):
-            # Nettoyage automatique des clés et des valeurs (supprime \xa0, espaces en début/fin)
+            # Nettoyage automatique des clés et des valeurs
             row = {k.strip(): v.strip() for k, v in raw_row.items() if k}
 
             # Extraction des champs avec les noms propres après nettoyage
-            nom_event = row.get("Nom de l'événement ou de l'association", "")
-            lieu_nom = row.get("Nom de l'établissement", "")
-            adresse_brute = row.get("Adresse complète (Rue, Code postal, Ville)", "")
-            quand = row.get("Date et Horaires", "Date à confirmer")
-            prix = row.get("Modalités de l'inscription", "Payant")
+            nom_event = row.get("Nom de l'événement ou de l'association")
+            lieu_nom = row.get("Nom de l'établissement")
+            adresse_brute = row.get("Adresse complète (Rue, Code postal, Ville)")
+            poker_raw = row.get("Format", "")
+            date_raw = row.get("Date", "")
+            heure = row.get("Heure de début")
+            prix = row.get("Modalités de l'inscription", "")
             lien = row.get("Lien vers la billetterie", "")
 
             # Si l'événement ou l'adresse est manquant, on passe à la suite
             if not nom_event or not adresse_brute:
                 continue
+
+            # Normalisation de la date vers YYYY-MM-DD
+            date_iso = normaliser_date(date_raw)
+
+            # Normalisation du champ "poker" (format)
+            poker_lower = poker_raw.lower()
+            if "cash" in poker_lower and "tournoi" in poker_lower:
+                poker_valeur = "les_deux"
+            elif "cash" in poker_lower:
+                poker_valeur = "cash"
+            elif "tournoi" in poker_lower:
+                poker_valeur = "tournois"
+            else:
+                poker_valeur = "tournois"
 
             # Géolocalisation via l'API BAN (data.gouv.fr)
             query_geo = f"{lieu_nom} {adresse_brute}".strip()
@@ -70,10 +115,12 @@ try:
                     "id": f"car_{4000 + idx}",
                     "nom": f"{nom_event} ({lieu_nom})" if lieu_nom else nom_event,
                     "type": "caritatif",
+                    "poker": poker_valeur,
                     "lat": lat,
                     "lng": lng,
                     "adresse": adresse_validee,
-                    "date": quand,
+                    "date": date_iso,  # <-- Date au format YYYY-MM-DD
+                    "heure": heure,
                     "prix": prix,
                     "gratuit": is_gratuit,
                     "inscription": {
@@ -83,7 +130,7 @@ try:
                     }
                 }
                 caritatifs_json.append(item)
-                print(f"[{idx}] Ajouté : {nom_event} ({adresse_validee})")
+                print(f"[{idx}] Ajouté : {nom_event} | Date: {date_iso} ({adresse_validee})")
             else:
                 print(f"[{idx}] Adresse introuvable pour : {nom_event} ({adresse_brute})")
 

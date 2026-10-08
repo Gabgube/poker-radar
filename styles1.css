@@ -1,15 +1,16 @@
-/* --- 1. Variables & Palette Neutre --- */
+/* --- 1. Variables & Palette (4 couleurs clés) --- */
 :root {
-  --brand-header: #064e3b; /* Vert tapis sombre (identité du site) */
-  --btn-primary: #064e3b;  /* Boutons principaux */
-  --btn-hover: #047557;    /* Survol boutons */
+  --felt: #123524;        /* Vert tapis principal */
+  --emerald: #2d7a58;     /* Vert d'accentuation */
+  --red: #d6382a;         /* Red Cactus & Focus */
+  --gold: #b8860b;        /* Casinos */
   
-  --ink: #0f172a;          /* Texte principal */
-  --muted: #64748b;        /* Texte secondaire */
-  --bg: #064e3b;           /* Fond de page léger */
-  --surface: #ffffff;      /* Surface des cartes et panneaux */
-  --line: #e2e8f0;         /* Séparateurs */
-  --radius: 8px;
+  --ink: #1c2420;         /* Texte sombre */
+  --muted: #627269;       /* Texte secondaire */
+  --bg: #f4f6f5;          /* Fond de page neutre */
+  --surface: #ffffff;     /* Surface des cartes */
+  --line: #e2e7e4;        /* Séparateurs doux */
+  --radius: 8px;          /* Arrondi uniforme */
 }
 
 * {
@@ -32,7 +33,7 @@ body {
 
 /* --- 2. En-tête & Pied de page --- */
 header {
-  background: var(--brand-header);
+  background: var(--felt);
   color: #fff;
   padding: 16px 24px;
   display: flex;
@@ -40,20 +41,21 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   z-index: 10;
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 header p {
   margin: 2px 0 0;
   font-size: 0.85rem;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 footer {
@@ -84,7 +86,7 @@ aside {
 #map {
   height: 100%;
   min-height: 0;
-  background: #cbd5e1;
+  background: #e5ece8;
 }
 
 /* --- 4. Filtres --- */
@@ -93,12 +95,12 @@ aside {
   border-bottom: 1px solid var(--line);
   display: grid;
   gap: 12px;
-  background: #f1f5f9;
+  background: #fafbfb;
 }
 
 .filters label {
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--muted);
@@ -115,20 +117,20 @@ select {
   background: var(--surface);
   color: var(--ink);
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 select:focus-visible, a:focus-visible, .card:focus-visible {
-  border-color: var(--btn-primary);
-  outline: 2px solid var(--btn-primary);
+  border-color: var(--emerald);
+  outline: 3px solid rgba(45, 122, 88, 0.25);
   outline-offset: 1px;
 }
 
 /* --- 5. Liste & Cartes --- */
 #count {
-  padding: 14px 16px 4px;
+  padding: 12px 16px 4px;
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--muted);
 }
 
@@ -143,23 +145,23 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
 
 .card {
   border: 1px solid var(--line);
-  border-left: 5px solid var(--c);
+  border-left: 5px solid var(--c, var(--emerald));
   border-radius: var(--radius);
   padding: 14px;
   cursor: pointer;
   background: var(--surface);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
 }
 
 .card h2 {
   margin: 0 0 6px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--ink);
 }
@@ -175,14 +177,15 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
 .tag {
   display: inline-block;
   font-size: 0.72rem;
-  font-weight: 600;
-  color: #475569;
-  background: #f1f5f9;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--c, var(--emerald));
+  background: rgba(0,0,0,0.04);
   padding: 3px 8px;
   border-radius: 4px;
   margin-right: 6px;
   margin-bottom: 6px;
-  border: 1px solid var(--line);
 }
 
 .btn {
@@ -191,7 +194,7 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
   gap: 6px;
   margin-top: 10px;
   padding: 8px 14px;
-  background: var(--btn-primary);
+  background: var(--felt);
   color: #fff !important;
   border-radius: var(--radius);
   text-decoration: none;
@@ -201,47 +204,47 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
 }
 
 .btn:hover {
-  background: var(--btn-hover);
+  background: var(--emerald);
 }
 
-/* Boutons GPS identiques aux boutons du site */
 .btn-maps {
-  background: var(--btn-primary);
+  background: #258746;
 }
 
 .btn-maps:hover {
-  background: var(--btn-hover);
+  background: #1b6834;
 }
 
 .btn-proposer {
   padding: 8px 16px;
   font: inherit;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--felt);
   background: #fff;
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: var(--radius);
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: background 0.15s ease;
 }
 
 .btn-proposer:hover {
-  background: #f8fafc;
+  background: #f0f4f2;
 }
 
-/* --- 7. Modale --- */
+/* --- 7. Modale de proposition --- */
 #dlg-tournoi {
   width: min(680px, 92vw);
   max-height: 90vh;
   padding: 0;
   border: 0;
   border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 #dlg-tournoi::backdrop {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(18, 53, 36, 0.6);
   backdrop-filter: blur(2px);
 }
 
@@ -250,20 +253,20 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px;
-  background: var(--brand-header);
+  background: var(--felt);
   color: #fff;
 }
 
 .dlg-barre h2 {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 
 #dlg-close {
   font: inherit;
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--felt);
   background: #fff;
   border: 0;
   border-radius: 6px;
@@ -281,18 +284,18 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
   border: 0;
 }
 
-/* --- 8. Marqueurs et Clusters Leaflet --- */
+/* --- 8. Cartes & Clusters Leaflet --- */
 .chip {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--c);
-  border: 2px solid #ffffff;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+  background: var(--c, var(--emerald));
+  border: 2px solid #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
 }
 
 .custom-cluster {
-  background: var(--brand-header) !important;
+  background: var(--felt) !important;
   border: 3px solid #ffffff;
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);

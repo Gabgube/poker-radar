@@ -1,22 +1,27 @@
 """
-Construit casinos.json à partir de la liste officielle des casinos (data.gouv.fr).
+Génère casinos.json à partir du Google Sheet (exporté en CSV).
+Filtre : Exclut les casinos marqués "Non" et catégorise le poker :
+        - 'cash' (Cash Game uniquement)
+        - 'tournois' (Tournois uniquement)
+        - 'les_deux' (Cash Game + Tournois)
+        - 'a_verifier' (Autre / Non spécifié)
 
-Usage :
-    python casinos.py            # Loire-Atlantique seulement (par défaut)
-    python casinos.py tous       # toute la France
-
-Si le téléchargement échoue, télécharge le CSV à la main, enregistre-le
-sous le nom casinos_officiel.csv dans ce dossier, et relance le script.
+Colonnes reconnues : n°, ville, exploitant, lieu, Poker ?, adresse, telephone
 """
-import csv, difflib, io, json, os, re, ssl, sys, time, unicodedata
-import urllib.parse, urllib.request
 
-API_DATASET = "https://www.data.gouv.fr/api/1/datasets/liste-des-casinos-de-france/"
-CSV_LOCAL = "casinos_officiel.csv"
-# Par défaut, DEPARTEMENT est à None (toute la France).
-# Si un paramètre est passé (ex: python generate_casinos.py 44), on filtre sur ce département.
-DEPARTEMENT = sys.argv[1] if (len(sys.argv) > 1 and sys.argv[1] != "tous") else None
+import csv
+import json
+import ssl
+import sys
+import time
+import urllib.parse
+import urllib.request
 
+# --- METS TON LIEN CSV GOOGLE SHEETS ICI ---
+# Format recommandé : https://docs.google.com/spreadsheets/d/ID_DE_TON_FICHIER/export?format=csv
+URL_SHEET_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSTZq18FLR7Svfn6PeISmF0ZaKstVpkePsFKTPnF3g2Xq8XtAbJrOfnXBV4YV3inSYdxBrLQ7wXxIPV/pub?output=csv"
+
+# Contexte SSL sécurisé
 try:
     import certifi
     CTX = ssl.create_default_context(cafile=certifi.where())
@@ -24,168 +29,157 @@ except ImportError:
     CTX = ssl.create_default_context()
 
 def http_get(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "carte-poker-france/0.1 (projet etudiant)"})
+    req = urllib.request.Request(url, headers={"User-Agent": "carte-poker-france/0.1"})
     with urllib.request.urlopen(req, timeout=30, context=CTX) as r:
         return r.read()
 
-def url_du_csv():
-    data = json.loads(http_get(API_DATASET))
-    csvs = [r for r in data.get("resources", []) if (r.get("format") or "").lower() == "csv"]
-    if not csvs:
-        raise RuntimeError("Aucun fichier CSV trouvé dans le jeu de données.")
-    csvs.sort(key=lambda r: r.get("last_modified") or "", reverse=True)
-    print("Fichier retenu :", csvs[0].get("title"), "-", csvs[0].get("last_modified"))
-    return csvs[0]["url"]
+def lire_csv_depuis_sheet(url):
+    print("Téléchargement des données depuis Google Sheets...")
+    raw = http_get(url)
+    texte = raw.decode("utf-8-sig")
+    
+    if "<!DOCTYPE html>" in texte or "<html" in texte:
+        sys.exit("❌ L'URL renvoie une page HTML. Assure-toi d'utiliser le bon lien d'export CSV (/export?format=csv).")
 
-def lire_csv():
-    if os.path.exists(CSV_LOCAL):
-        raw = open(CSV_LOCAL, "rb").read()
-        print("Lecture du fichier local", CSV_LOCAL)
-    else:
-        print("Téléchargement de la liste officielle...")
-        raw = http_get(url_du_csv())
+    lignes = texte.splitlines()
+    if not lignes:
+        return []
+    delim = ";" if lignes[0].count(";") >= lignes[0].count(",") else ","
+    return list(csv.DictReader(lignes, delimiter=delim))
+
+def geocoder(ville):
+    """Géolocalisation via l'API geo.api.gouv.fr"""
+    if not ville:
+        return None, None, False
     try:
-        texte = raw.decode("utf-8-sig")
-    except UnicodeDecodeError:
-        texte = raw.decode("cp1252")
-    l1 = texte.splitlines()[0]
-    delim = ";" if l1.count(";") >= l1.count(",") else ","
-    return list(csv.DictReader(io.StringIO(texte), delimiter=delim))
-
-def trouver(row, *mots):
-    for col, val in row.items():
-        c = (col or "").lower()
-        if any(m in c for m in mots):
-            return (val or "").strip()
-    return ""
-
-GROUPES = {"Joagroupe": "JOA", "Barriere": "Barrière", "Barriere/Desseigne": "Barrière/Desseigne"}
-
-def joli(txt):
-    t = " ".join(txt.replace("- ", "-").replace(" -", "-").title().split())
-    return GROUPES.get(t, t)
-
-def norm(txt):
-    t = unicodedata.normalize("NFD", txt.lower())
-    return "".join(ch for ch in t if unicodedata.category(ch) != "Mn").strip()
-
-# Noms du CSV qui ne correspondent pas à une commune officielle -> nom de la commune
-CORRECTIONS = {
-    "cap-d'agde": "Agde", "antibes-juan-les-pins": "Antibes", "royat-chamalieres": "Royat",
-    "dunkerque-malo-les-bains": "Dunkerque", "le touquet": "Le Touquet-Paris-Plage",
-    "argeles-plage": "Argelès-sur-Mer", "la-faute-sur-mer": "La Faute-sur-Mer",
-    "les sables d'olonne": "Les Sables-d'Olonne", "gosier-les-bains": "Le Gosier",
-    "frehel-les-sables d'or": "Fréhel", "santenay-les-bains": "Santenay",
-    "cazaubon-barbotan": "Cazaubon", "chamonix": "Chamonix-Mont-Blanc",
-    "saint-gilles": "Saint-Paul", "berck-sur-mer": "Berck", "evian-les-bains": "Évian-les-Bains",
-    "hauteville-lompnes": "Plateau d'Hauteville",
-    "saint-gervais": "Saint-Gervais-les-Bains", "megeve": "Megève",
-}
-
-rows = lire_csv()
-if not rows:
-    sys.exit("Le CSV est vide.")
-print("\nColonnes du fichier :", list(rows[0].keys()))
-print("Première ligne      :", rows[0], "\n")
-
-casinos = []
-for row in rows:
-    dep = trouver(row, "départ", "depart")
-    brut = trouver(row, "commune", "ville", "établissement", "etablissement")
-    groupe = trouver(row, "groupe", "exploit", "société", "societe")
-    if not brut:
-        continue
-    if DEPARTEMENT and not (dep.startswith(DEPARTEMENT) or "loire-atlantique" in dep.lower()):
-        continue
-    # "VICHY "GRAND CAFÉ"" -> commune "Vichy" + lieu "Grand Café"
-    m = re.match(r'^(.*?)\s*"(.+?)"\s*$', brut)
-    commune_csv, lieu = (m.group(1), joli(m.group(2))) if m else (brut, "")
-    commune = joli(commune_csv)
-    ville_api = CORRECTIONS.get(norm(commune), commune)
-    nom = f"Casino {joli(groupe)} de {commune}" if groupe else f"Casino de {commune}"
-    if lieu:
-        nom += f" – {lieu}"
-    casinos.append({"dep": dep, "commune": commune, "ville_api": ville_api,
-                    "lieu": lieu, "nom": nom, "exploitant": joli(groupe)})
-
-def communes(**params):
-    q = {"fields": "nom,centre,codeDepartement", "boost": "population"}
-    q.update(params)
-    return json.loads(http_get("https://geo.api.gouv.fr/communes?" + urllib.parse.urlencode(q)))
-
-_cache_dep = {}
-
-def communes_du_departement(cd):
-    if cd not in _cache_dep:
-        _cache_dep[cd] = json.loads(http_get(f"https://geo.api.gouv.fr/departements/{cd}/communes?fields=nom,centre"))
-    return _cache_dep[cd]
-
-def simplifier(nom):
-    return " ".join(norm(nom).replace("-", " ").replace("'", " ").split())
-
-def geocoder(c):
-    """Renvoie (lat, lng, approx). approx=True si la commune n'a pas été trouvée dans le bon département."""
-    code = c["dep"].split(" - ")[0].strip()
-    codes = [code] + (["2A", "2B"] if code == "20" else [])
-    for cd in codes:                                   # 1) avec le département
-        res = communes(nom=c["ville_api"], codeDepartement=cd, limit=1)
+        url = "https://geo.api.gouv.fr/communes?" + urllib.parse.urlencode({
+            "nom": ville.strip(),
+            "fields": "centre",
+            "limit": 1
+        })
+        res = json.loads(http_get(url))
         if res:
             lng, lat = res[0]["centre"]["coordinates"]
             return lat, lng, False
-    res = communes(nom=c["ville_api"], limit=5)        # 2) sans filtre : on prend ce qui est dans le bon département
-    for r in res:
-        if r.get("codeDepartement") in codes:
-            lng, lat = r["centre"]["coordinates"]
-            return lat, lng, False
-    if res:                                            # 3) dernier recours : meilleure correspondance, à vérifier
-        lng, lat = res[0]["centre"]["coordinates"]
-        return lat, lng, True
-    for cd in codes:                                   # 4) comparaison approchée avec toutes les communes du département
-        try:
-            liste = {simplifier(r["nom"]): r for r in communes_du_departement(cd)}
-        except Exception:
-            continue
-        proche = difflib.get_close_matches(simplifier(c["ville_api"]), list(liste), n=1, cutoff=0.6)
-        if proche:
-            lng, lat = liste[proche[0]]["centre"]["coordinates"]
-            return lat, lng, True
-    return None, None, False
-
-print(len(casinos), "casinos retenus. Géolocalisation (centre de la commune, API geo.api.gouv.fr)...\n")
-
-resultat, echecs = [], []
-for i, c in enumerate(casinos, 1):
-    try:
-        lat, lng, approx = geocoder(c)
     except Exception as e:
-        print("  erreur géocodage", c["commune"], e)
-        lat = lng = None; approx = False
-    marque = " (APPROXIMATIF, à vérifier)" if approx else ""
-    print(f"[{i}/{len(casinos)}] {c['nom']} -> {lat}, {lng}{marque}")
-    if lat is None:
-        echecs.append(f'{c["nom"]}   [département CSV : {c["dep"]}]')
-    resultat.append({
-        "id": f"cas_{i}",
-        "nom": c["nom"],
-        "type": "casino",
-        "ville": c["commune"],
-        "departement": c["dep"],
-        "adresse": f"{c['commune']} (adresse exacte à compléter)",
-        "lat": lat, "lng": lng,
-        "position_approximative": approx,
-        "exploitant": c["exploitant"],
-        "poker": "a_verifier",      # valeurs : tournois, cash, les_deux, non, a_verifier
-        "gratuit": False,
-        "prix": "À renseigner",
-        "quand": "À renseigner",
-        "inscription": None
-    })
-    time.sleep(0.1)
+        print(f"  Erreur lors de la géolocalisation de {ville}: {e}")
+    return None, None, True
 
-with open("casinos.json", "w", encoding="utf-8") as f:
-    json.dump(resultat, f, ensure_ascii=False, indent=2)
-print(f"\nTerminé : {len(resultat)} casinos écrits dans casinos.json (poker = a_verifier pour tous).")
-if echecs:
-    print(f"\n{len(echecs)} casinos sans coordonnées :")
-    for e in echecs:
-        print("  -", e)
+def classifier_poker(val):
+    """
+    Analyse la chaîne de caractères issue du Sheet et retourne :
+    'cash', 'tournois', 'les_deux', 'non', ou 'a_verifier'.
+    """
+    v = (val or "").strip().lower()
+    
+    # 1. Cas d'exclusion
+    if v in ["non", "no", "false", "0", "aucun", "none"]:
+        return "non"
+    
+    # 2. Analyse des mots-clés
+    a_cash = any(k in v for k in ["cash", "cg", "cash-game", "cash game"])
+    a_tournoi = any(k in v for k in ["tournoi", "tournois", "mtt", "mtt/"])
+    a_les_deux = any(k in v for k in ["les deux", "les_deux", "tous", "tout", "les 2", "cash + tournoi", "tournoi + cash"])
+
+    if a_les_deux or (a_cash and a_tournoi):
+        return "les_deux"
+    elif a_cash:
+        return "cash"
+    elif a_tournoi:
+        return "tournois"
+    elif v in ["oui", "yes", "vrai", "true"]:
+        # Si c'est juste "Oui" sans précision, on met 'les_deux' ou 'a_verifier' selon la convention
+        return "les_deux"
+    
+    return "a_verifier"
+
+import re
+
+def normaliser_telephone(tel_raw):
+    if not tel_raw:
+        return ""
+    
+    # 1. Ne garder que les chiffres et le '+'
+    cleand = re.sub(r"[^\d+]", "", str(tel_raw).strip())
+    
+    # 2. Convertir +33X... ou 33X... au format local 0X...
+    if cleand.startswith("+33"):
+        cleand = "0" + cleand[3:]
+    elif cleand.startswith("33") and len(cleand) == 11:
+        cleand = "0" + cleand[2:]
+        
+    # 3. Formater en blocs de 2 chiffres si c'est un numéro français à 10 chiffres (0X XX XX XX XX)
+    if len(cleand) == 10 and cleand.startswith("0"):
+        return " ".join([cleand[i:i+2] for i in range(0, 10, 2)])
+    
+    return cleand
+
+if __name__ == "__main__":
+    if "TON_LIEN_ICI" in URL_SHEET_CSV:
+        sys.exit("❌ Pense à remplacer URL_SHEET_CSV par ton lien au format CSV !")
+
+    rows = lire_csv_depuis_sheet(URL_SHEET_CSV)
+    if not rows:
+        sys.exit("❌ Aucune donnée trouvée dans le CSV.")
+
+    print(f"Colonnes détectées : {list(rows[0].keys())}\n")
+
+    resultat = []
+    ignores = 0
+
+    for i, row in enumerate(rows, 1):
+        ville = (row.get("ville") or "").strip()
+        exploitant = (row.get("exploitant") or "").strip()
+        lieu = (row.get("lieu") or "").strip()
+        poker_raw = row.get("Poker ?") or row.get("Poker") or ""
+        adresse = (row.get("adresse") or "").strip()
+        tel = (row.get("telephone") or "").strip()
+
+        poker_type = classifier_poker(poker_raw)
+        tel = normaliser_telephone(tel)
+
+        # Exclusion des établissements sans poker
+        if poker_type == "non" or poker_type == "a_verifier":
+            ignores += 1
+            continue
+
+        if not ville and not lieu:
+            continue
+
+        # Formattage du nom (ex: Casino Barrière - Deauville)
+        nom_base = f"Casino {exploitant}".strip() if exploitant else "Casino"
+        if lieu:
+            nom = f"{nom_base} - {lieu}"
+        elif ville:
+            nom = f"{nom_base} de {ville}"
+        else:
+            nom = nom_base
+
+        # Géolocalisation
+        lat, lng, approx = geocoder(ville)
+
+        cas_data = {
+            "id": f"cas_{len(resultat) + 1}",
+            "nom": nom,
+            "type": "casino",
+            "ville": ville,
+            "adresse": adresse or (f"{ville}" if ville else "Adresse non spécifiée"),
+            "telephone": tel,
+            "lat": lat,
+            "lng": lng,
+            "position_approximative": approx,
+            "exploitant": exploitant,
+            "poker": poker_type,  # 'cash', 'tournois', 'les_deux', ou 'a_verifier'
+            "gratuit": False,
+        }
+
+        resultat.append(cas_data)
+        print(f"[{len(resultat)}] {nom} ({ville}) -> Offre Poker: {poker_type} | Coordonnées: {lat}, {lng}")
+        time.sleep(0.05)
+
+    # Sauvegarde du JSON
+    with open("casinos.json", "w", encoding="utf-8") as f:
+        json.dump(resultat, f, ensure_ascii=False, indent=2)
+
+    print(f"\n✅ Terminé : {len(resultat)} casinos conservés dans casinos.json.")
+    print(f"ℹ️ {ignores} casinos ignorés car 'Poker ?' = Non.")

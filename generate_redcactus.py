@@ -27,22 +27,30 @@ except Exception as err:
 features = data.get("features", [])
 total = len(features)
 
-print(f"\n2. Analyse et enrichissement de {total} éléments...")
+print(f"\n2. Analyse, aplatissement et enrichissement de {total} éléments...")
 
-features_enrichies = []
+bars_nettoyes = []
 
 for idx, feature in enumerate(features, 1):
     raw_id = feature.get("id")
     props = feature.get("properties", {})
+    geometry = feature.get("geometry", {})
+    coordinates = geometry.get("coordinates", [])
+    
     type_lieu = props.get("type") or feature.get("type")
-    nom = props.get("name", f"Bar #{raw_id}")
+    nom = props.get("name") or props.get("nom") or f"Bar #{raw_id}"
 
-    # Ignorer les éléments sans ID et les finales / demi-finales
-    if not raw_id or type_lieu in ['semi-final', 'pre-main-final']:
+    # 1. Ignorer les éléments sans ID, sans GPS ou les finales / demi-finales
+    if not raw_id or type_lieu in ['semi-final', 'pre-main-final'] or len(coordinates) < 2:
         continue
 
-    # Scraping de la page du bar sur Red Cactus
+    # 2. Extraction et inversion des coordonnées : GeoJSON (lng, lat) -> float(lat), float(lng)
+    lng, lat = float(coordinates[0]), float(coordinates[1])
+
+    # 3. Scraping du jour de tournoi
     url_bar = f"https://poker.redcactus.fr/bar/{raw_id}"
+    quand = "Tournois réguliers"
+
     try:
         res = requests.get(url_bar, headers=headers, timeout=10)
         if res.status_code == 200:
@@ -56,27 +64,36 @@ for idx, feature in enumerate(features, 1):
             )
 
             if match:
-                jour = match.group(0).strip().capitalize()
-                props["quand"] = jour
-                print(f"[{idx}/{total}] {nom} -> {jour}")
+                quand = match.group(0).strip().capitalize()
+                print(f"[{idx}/{total}] {nom} -> {quand}")
             else:
-                props["quand"] = "Tournois réguliers"
                 print(f"[{idx}/{total}] {nom} -> Jour non détecté")
         else:
-            props["quand"] = "Tournois réguliers"
             print(f"[{idx}/{total}] {nom} -> Erreur HTTP {res.status_code}")
 
     except Exception as err:
-        props["quand"] = "Tournois réguliers"
         print(f"[{idx}/{total}] {nom} -> Erreur : {err}")
 
-    features_enrichies.append(feature)
+    # 4. Construction de l'objet plat standardisé avec ID brut intact
+    bar_clean = {
+        "id": f"rc_{raw_id}",
+        "nom": nom,
+        "type": "bar",
+        "poker": "tournois",
+        "gratuit": True,
+        "lat": lat,
+        "lng": lng,
+        "adresse": props.get("adresse") or props.get("address") or "",
+        "date": quand,
+        "url": url_bar
+    }
+
+    bars_nettoyes.append(bar_clean)
     time.sleep(0.05)
 
-data["features"] = features_enrichies
-
+# 5. Sauvegarde directe sous forme de tableau d'objets JSON [ {...}, {...} ]
 print(f"\n3. Sauvegarde dans {OUTPUT_FILE}...")
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    json.dump(data, f, ensure_ascii=False, indent=2)
+    json.dump(bars_nettoyes, f, ensure_ascii=False, indent=2)
 
-print(f"\nTerminé ! {len(features_enrichies)} bars enregistrés dans {OUTPUT_FILE}.")
+print(f"\nTerminé ! {len(bars_nettoyes)} bars enregistrés dans {OUTPUT_FILE}.")

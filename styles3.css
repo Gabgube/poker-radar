@@ -1,12 +1,12 @@
 /* --- 1. Variables & Palette Neutre --- */
 :root {
-  --brand-header: #064e3b; /* Vert tapis sombre (identité du site) */
-  --btn-primary: #064e3b;  /* Boutons principaux */
-  --btn-hover: #047557;    /* Survol boutons */
+  --brand-header: #0f291e; /* Vert tapis sombre (identité du site) */
+  --btn-primary: #0f291e;  /* Boutons principaux */
+  --btn-hover: #194332;    /* Survol boutons */
   
   --ink: #0f172a;          /* Texte principal */
   --muted: #64748b;        /* Texte secondaire */
-  --bg: #064e3b;           /* Fond de page léger */
+  --bg: #f8fafc;           /* Fond de page léger */
   --surface: #ffffff;      /* Surface des cartes et panneaux */
   --line: #e2e8f0;         /* Séparateurs */
   --radius: 8px;

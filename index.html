@@ -48,6 +48,14 @@
             <option value="payant">Payant</option>
           </select>
         </label>
+        <label> Format
+        <select id="f-poker">
+          <option value="">Tous les formats</option>
+          <option value="cash">Cash Game</option>
+          <option value="tournois">Tournois</option>
+          <option value="les_deux">Cash Game & Tournois</option>
+        </select>
+      </label>
       </div>
       
       <!-- Compteur de résultats -->
@@ -83,41 +91,5 @@
 
   <!-- Lien vers TON fichier JavaScript -->
   <script src="app.js"></script>
-
-  <!-- Ouverture du formulaire des organisateurs -->
-  <script>
-    (function () {
-      const URL_FORMULAIRE = "https://docs.google.com/forms/d/e/1FAIpQLSd1D3HN-joemrjvV5pYSA-wbXtF3-YDajahuXe4At9rseTJIA/viewform?usp=dialog";
-
-      const dlg = document.getElementById("dlg-tournoi");
-      const frame = document.getElementById("dlg-frame");
-      const lien = document.getElementById("dlg-lien");
-      const msg = document.getElementById("dlg-msg");
-
-      // On n'accepte que Google Forms ou Tally, pour ne jamais afficher un site inconnu
-      const valide = /^https:\/\/(docs\.google\.com\/forms\/|tally\.so\/)/.test(URL_FORMULAIRE);
-
-      document.getElementById("btn-proposer").addEventListener("click", function () {
-        if (valide) {
-          frame.src = URL_FORMULAIRE;
-          frame.hidden = false;
-          lien.href = URL_FORMULAIRE;
-          lien.hidden = false;
-          msg.hidden = true;
-        } else {
-          frame.hidden = true;
-          lien.hidden = true;
-          msg.hidden = false;
-        }
-        dlg.showModal();
-      });
-
-      document.getElementById("dlg-close").addEventListener("click", function () { dlg.close(); });
-      // Clic en dehors de la fenêtre : on ferme
-      dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
-      // À la fermeture, on vide le formulaire pour ne rien laisser en mémoire
-      dlg.addEventListener("close", function () { frame.removeAttribute("src"); });
-    })();
-  </script>
 </body>
 </html>
