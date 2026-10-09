@@ -1,9 +1,9 @@
 // --- 1. Configuration initiale ---
 
 const TYPES = {
-  bar:       { nom: "Bar Red Cactus", couleur: "#dc2626" }, // Rouge jeton
-  casino:    { nom: "Casino", couleur: "#18181b" },         // Noir jeton
-  caritatif: { nom: "Tournoi caritatif", couleur: "#1d4ed8" } // Bleu jeton
+  bar:        { nom: "Bar Red Cactus", couleur: "#dc2626" }, // Rouge jeton
+  casino:     { nom: "Casino", couleur: "#18181b" },         // Noir jeton
+  associatif: { nom: "Tournoi associatif", couleur: "#1d4ed8" } // Bleu jeton
 };
 
 const OFFRES_POKER = {
@@ -19,9 +19,7 @@ let lieux = [];
 
 // --- 2. Fonctions d'affichage HTML (Boutons et Détails) ---
 
-// Utilitaire pour copier le téléphone tout en déclenchant l'appel
 function composerOuCopier(e, tel) {
-  // Copie dans le presse-papier en arrière-plan
   if (navigator.clipboard && tel) {
     navigator.clipboard.writeText(tel).catch(() => {});
   }
@@ -30,22 +28,28 @@ function composerOuCopier(e, tel) {
 function boutonInscription(l) {
   let boutonsHtml = "";
 
-  // 1. Cas particulier des Casinos : Gestion du Téléphone
-  if (l.type === "casino" && l.telephone) {
-    // Nettoyage du numéro pour l'attribut href (ex: "01 23 45 67 89" -> "0123456789")
-    const telClean = String(l.telephone).replace(/[^\d+]/g, '');
-    const telAffiche = esc(l.telephone);
-
-    boutonsHtml += `<a class="btn btn-tel" href="tel:${telClean}" onclick="composerOuCopier(event, '${telClean}')" title="Appeler ou copier le numéro"> ${telAffiche}</a>`;
+  // 1. Cas particulier des Casinos : Gestion du Téléphone et du Site Web
+  if (l.type === "casino") {
+    if (l.telephone) {
+      const telClean = String(l.telephone).replace(/[^\d+]/g, '');
+      const telAffiche = esc(l.telephone);
+      boutonsHtml += `<a class="btn btn-tel" href="tel:${telClean}" onclick="composerOuCopier(event, '${telClean}')" title="Appeler ou copier le numéro">${telAffiche}</a>`;
+    }
+    
+    if (l.web) {
+      const urlWeb = l.web.startsWith("http") ? l.web : `https://${l.web}`;
+      boutonsHtml += ` <a class="btn btn-web" href="${esc(urlWeb)}" target="_blank" rel="noopener noreferrer">Site web</a>`;
+    }
   }
+
   // 2. Bouton d'information / réservation standard
   else if (l.inscription && l.inscription.valeur) {
-    const libelle = l.inscription.libelle || (l.type === "caritatif" ? "Voir le tournoi" : "En savoir plus");
+    const libelle = l.inscription.libelle || (l.type === "associatif" ? "Voir le tournoi" : "En savoir plus");
     boutonsHtml += `<a class="btn" href="${esc(l.inscription.valeur)}" target="_blank" rel="noopener noreferrer">${esc(libelle)}</a>`;
   } 
   else if (l.url) {
     let libelle = "En savoir plus";
-    if (l.type === "caritatif") libelle = "Voir le tournoi";
+    if (l.type === "associatif") libelle = "Voir le tournoi";
     else if (l.type === "bar") libelle = "Voir la page du bar";
 
     boutonsHtml += `<a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(libelle)}</a>`;
@@ -74,31 +78,33 @@ function formerDateFr(dateIso) {
 
 function details(l) {
   const t = TYPES[l.type] || TYPES.bar;
-  let badges = `<span class="tag" style="--c:${t.couleur}">${esc(t.nom)}</span>`;
-  
-  if (l.isNew) {
-    badges += ` <span class="tag" style="--c:#2563eb">Nouveau</span>`;
+
+  // 1. Badge principal (Tournoi associatif vs Tournoi caritatif)
+  let nomType = t.nom;
+  if (l.type === "associatif" && l.is_caritatif) {
+    nomType = "Tournoi caritatif";
   }
+
+  let badges = `<span class="tag" style="--c:${t.couleur}">${esc(nomType)}</span>`;
 
   // Badge d'offre Poker
   if (l.poker && OFFRES_POKER[l.poker]) {
     badges += ` <span class="tag tag-poker" style="--c:#059669">${esc(OFFRES_POKER[l.poker])}</span>`;
   }
 
-  // 1. Gestion de la date / calendrier
+  // 2. Gestion de la date / calendrier
   let infoDate = "Tournois réguliers";
-  if (l.type === "caritatif") {
+  if (l.type === "associatif") {
     infoDate = l.date ? formerDateFr(l.date) : "Date inconnue";
+  } else if (l.type === "casino") {
+    infoDate = "Voir les dates sur le site";
   } else if (l.date) {
     infoDate = l.date;
   }
-  if (l.type === "casino") {
-    infoDate = "Voir les dates sur le site";
-  }
 
-  // 2. Gestion du prix
+  // 3. Gestion du prix
   let infoPrix = "";
-  if (l.type === "caritatif") {
+  if (l.type === "associatif") {
     infoPrix = l.prix || (l.gratuit ? "Gratuit" : "Payant");
   } else {
     // Red Cactus et Casinos : "Gratuit" ou "Payant" selon l.gratuit
@@ -259,7 +265,7 @@ Promise.all([
   // 3. Tournois caritatifs
   const caritatifsValides = dataCaritatifs
     .filter(c => typeof c.lat === "number" && typeof c.lng === "number")
-    .filter(c => !c.date || c.date >= aujourdhui)
+    .filter(c => !c.date || c.date >= aujourdhui);
 
   // Fusion globale
   lieux = [...redCactusFormates, ...casinosValides, ...caritatifsValides];
@@ -296,5 +302,23 @@ document.addEventListener("DOMContentLoaded", () => {
     btnClose.addEventListener("click", function () {
       dlg.close();
     });
+  }
+});
+
+// --- 7. Gestion du Menu Déroulant (Burger) ---
+
+function toggleMenu(e) {
+  if (e) e.stopPropagation();
+  const menu = document.getElementById("dropdown-content");
+  if (menu) {
+    menu.classList.toggle("show");
+  }
+}
+
+// Fermeture au clic n'importe où sur la page
+window.addEventListener("click", function () {
+  const menu = document.getElementById("dropdown-content");
+  if (menu) {
+    menu.classList.remove("show");
   }
 });

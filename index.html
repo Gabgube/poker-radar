@@ -22,10 +22,29 @@
 <body>
   <!-- En-tête de la page -->
   <header>
+  <div class="header-titre">
     <h1>Poker-Radar</h1>
     <p>Tournois en bars, casinos, tournois caritatifs : tout au même endroit.</p>
+  </div>
+
+  <div class="header-actions">
     <button type="button" id="btn-proposer" class="btn-proposer">Proposer un tournoi caritatif</button>
-  </header>
+
+    <div class="menu-dropdown">
+  <button type="button" class="btn-burger" id="btn-burger" onclick="toggleMenu(event)" aria-label="Menu navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="dropdown-content" id="dropdown-content">
+    <a href="contact.html">Contact</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+  </div>
+</div>
+  </div>
+</header>
 
   <!-- Contenu principal -->
   <main>
@@ -37,7 +56,7 @@
             <option value="">Tous les types</option>
             <option value="bar">Red Cactus</option>
             <option value="casino">Casinos</option>
-            <option value="caritatif">Caritatifs</option>
+            <option value="associatif">Associatif</option>
           </select>
           </select>
         </label>

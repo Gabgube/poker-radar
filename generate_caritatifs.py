@@ -55,14 +55,16 @@ try:
             row = {k.strip(): v.strip() for k, v in raw_row.items() if k}
 
             # Extraction des champs avec les noms propres après nettoyage
-            nom_event = row.get("Nom de l'événement ou de l'association")
-            lieu_nom = row.get("Nom de l'établissement")
+            nom_event = row.get("Nom de l'événement")
+            orga = row.get("Nom de l'organisation")
             adresse_brute = row.get("Adresse complète (Rue, Code postal, Ville)")
             poker_raw = row.get("Format", "")
             date_raw = row.get("Date", "")
             heure = row.get("Heure de début")
             prix = row.get("Modalités de l'inscription", "")
             lien = row.get("Lien vers la billetterie", "")
+            Is_caritatif = row.get("Est-ce un évènement caritatif ?")
+            Is_gratuit = row.get("Participation gratuite possible ?")
 
             # Si l'événement ou l'adresse est manquant, on passe à la suite
             if not nom_event or not adresse_brute:
@@ -82,8 +84,19 @@ try:
             else:
                 poker_valeur = "tournois"
 
+            #Normalisation du champ Is_caritatif
+            if Is_caritatif == "Oui":
+                Is_caritatif = True
+            else:
+                Is_caritatif = False
+            #Normalisation du champ Is_gratuit
+            if Is_gratuit == "Oui":
+                Is_gratuit = True
+            else:
+                Is_gratuit = False
+
             # Géolocalisation via l'API BAN (data.gouv.fr)
-            query_geo = f"{lieu_nom} {adresse_brute}".strip()
+            query_geo = f"{adresse_brute}".strip()
             encoded_addr = urllib.parse.quote(query_geo)
             geo_url = f"https://api-adresse.data.gouv.fr/search/?q={encoded_addr}&limit=1"
             
@@ -103,8 +116,6 @@ try:
                 print(f"Erreur géo pour {nom_event}: {e}")
 
             if lat and lng:
-                # Formatage du champ gratuité
-                is_gratuit = "gratuit" in prix.lower() or prix.strip() in ["0", "0€"]
                 
                 # Construction du lien d'inscription
                 lien_formatted = ""
@@ -113,8 +124,8 @@ try:
 
                 item = {
                     "id": f"car_{4000 + idx}",
-                    "nom": f"{nom_event} ({lieu_nom})" if lieu_nom else nom_event,
-                    "type": "caritatif",
+                    "nom": f"{nom_event} ({orga})" if orga else f"{nom_event}",
+                    "type": "associatif",
                     "poker": poker_valeur,
                     "lat": lat,
                     "lng": lng,
@@ -122,11 +133,12 @@ try:
                     "date": date_iso,  # <-- Date au format YYYY-MM-DD
                     "heure": heure,
                     "prix": prix,
-                    "gratuit": is_gratuit,
+                    "gratuit": Is_gratuit,
+                    "is_caritatif" : Is_caritatif,
                     "inscription": {
                         "type": "url",
                         "valeur": lien_formatted,
-                        "libelle": "En savoir plus / S'inscrire"
+                        "libelle": "Site Web"
                     }
                 }
                 caritatifs_json.append(item)

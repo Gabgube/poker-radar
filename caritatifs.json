@@ -1,1 +1,154 @@
-[]
+[
+  {
+    "id": "car_4001",
+    "nom": "GRAND TOURNOI DE POKER CARITATIF (HandiGab)",
+    "type": "associatif",
+    "poker": "tournois",
+    "lat": 50.578577,
+    "lng": 2.852459,
+    "adresse": "11 Rue du Bourg 59134 Herlies",
+    "date": "2026-11-07",
+    "heure": "10:00:00",
+    "prix": "Gratuit mais possibilité de faire un dons",
+    "gratuit": true,
+    "is_caritatif": true,
+    "inscription": {
+      "type": "url",
+      "valeur": "https://www.helloasso.com/associations/handigab/evenements/grand-tournoi-de-poker-caritatif",
+      "libelle": "Site Web"
+    }
+  },
+  {
+    "id": "car_4002",
+    "nom": "Tournoi de poker caritatif - Octobre Rose (Poker Instinct Bonnières)",
+    "type": "associatif",
+    "poker": "tournois",
+    "lat": 49.037661,
+    "lng": 1.581186,
+    "adresse": "45 Rue Georges Herrewyn 78270 Bonnières-sur-Seine",
+    "date": "2026-10-18",
+    "heure": "14:00:00",
+    "prix": "Gratuit et dons encouragés au profit d'Octobre Rose",
+    "gratuit": true,
+    "is_caritatif": true,
+    "inscription": {
+      "type": "url",
+      "valeur": "https://www.intramuros.org/bonnieres-sur-seine/agenda/888021",
+      "libelle": "Site Web"
+    }
+  },
+  {
+    "id": "car_4003",
+    "nom": "Tournoi Poker - Téléthon / Octobre Rose (Châteauroux Poker Club)",
+    "type": "associatif",
+    "poker": "tournois",
+    "lat": 46.80941,
+    "lng": 1.677527,
+    "adresse": "19 Rue Sainte-Marguerite 36000 Châteauroux",
+    "date": "2026-10-24",
+    "heure": "10:00:00",
+    "prix": "Gratuit, dons encouragés (bonus de 5k jetons si dons)",
+    "gratuit": true,
+    "is_caritatif": true,
+    "inscription": {
+      "type": "url",
+      "valeur": "https://my.weezevent.com/tournoi-telethon-1",
+      "libelle": "Site Web"
+    }
+  },
+  {
+    "id": "car_4004",
+    "nom": "Einstein Poker Tour - Edition Ladies Octobre Rose (Pile Events)",
+    "type": "associatif",
+    "poker": "tournois",
+    "lat": 44.915154,
+    "lng": -0.248011,
+    "adresse": "3 Quai Souchet 33500 Libourne",
+    "date": "2026-10-24",
+    "heure": "09:00:00",
+    "prix": "Réservé aux femmes majeures",
+    "gratuit": true,
+    "is_caritatif": true,
+    "inscription": {
+      "type": "url",
+      "valeur": "https://www.helloasso.com/associations/association-pile-events/evenements/einstein-poker-tour-edition-ladies-octobre-rose-1",
+      "libelle": "Site Web"
+    }
+  },
+  {
+    "id": "car_4005",
+    "nom": "TOURNOI DE POKER USAM (Union Sportive Aussillon-MazametXV)",
+    "type": "associatif",
+    "poker": "tournois",
+    "lat": 43.489913,
+    "lng": 2.374498,
+    "adresse": "11 Rue Gaston Cormouls-Houlès 81200 Mazamet",
+    "date": "2026-11-07",
+    "heure": "14:00:00",
+    "prix": "Plusieurs options de tarifs",
+    "gratuit": true,
+    "is_caritatif": false,
+    "inscription": {
+      "type": "url",
+      "valeur": "https://www.helloasso.com/associations/union-sportive-aussillon-mazametxv/evenements/tournoi-de-poker-usam",
+      "libelle": "Site Web"
+    }
+  },
+  {
+    "id": "car_4006",
+    "nom": "Main Event - One More (Chouette Poker)",
+    "type": "associatif",
+    "poker": "tournois",
+    "lat": 47.545974,
+    "lng": 0.540176,
+    "adresse": "Salles des Fêtes 37360 Neuillé-Pont-Pierre",
+    "date": "2026-11-14",
+    "heure": "11:00:00",
+    "prix": "Dons encouragés pour la couvrir les frais liés au tournoi",
+    "gratuit": true,
+    "is_caritatif": false,
+    "inscription": {
+      "type": "url",
+      "valeur": "https://www.helloasso.com/associations/chouette-poker/evenements/main-event-one-more",
+      "libelle": "Site Web"
+    }
+  },
+  {
+    "id": "car_4007",
+    "nom": "Tournoi d'automne Saison 3 (Metz Poker Club)",
+    "type": "associatif",
+    "poker": "tournois",
+    "lat": 49.103818,
+    "lng": 6.30924,
+    "adresse": "1 Rue du 6 Février 57645 Ogy-Montoy-Flanville",
+    "date": "2026-11-07",
+    "heure": "10:00:00",
+    "prix": "Options payantes encouragés pour soutenir l'organisation",
+    "gratuit": true,
+    "is_caritatif": false,
+    "inscription": {
+      "type": "url",
+      "valeur": "https://www.helloasso.com/associations/metz-poker-club/evenements/tournoi-d-automne-saison-3",
+      "libelle": "Site Web"
+    }
+  },
+  {
+    "id": "car_4008",
+    "nom": "Main Event MTT - PCO (Poker club de l'Oise Chevrières)",
+    "type": "associatif",
+    "poker": "tournois",
+    "lat": 49.346338,
+    "lng": 2.668585,
+    "adresse": "955 Rue de Beauvais 60710 Chevrières",
+    "date": "2026-10-17",
+    "heure": "10:00:00",
+    "prix": "30€",
+    "gratuit": false,
+    "is_caritatif": false,
+    "inscription": {
+      "type": "url",
+      "valeur": "https://www.helloasso.com/associations/pco-poker-club-de-l-oise/evenements/main-event-mtt-poker-club-de-l-oise-chevrieres-2026",
+      "libelle": "Site Web"
+    }
+  }
+]

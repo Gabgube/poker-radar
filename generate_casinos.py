@@ -134,6 +134,7 @@ if __name__ == "__main__":
         poker_raw = row.get("Poker ?") or row.get("Poker") or ""
         adresse = (row.get("adresse") or "").strip()
         tel = (row.get("telephone") or "").strip()
+        web = (row.get("site web") or "").strip()
 
         poker_type = classifier_poker(poker_raw)
         tel = normaliser_telephone(tel)
@@ -171,6 +172,7 @@ if __name__ == "__main__":
             "exploitant": exploitant,
             "poker": poker_type,  # 'cash', 'tournois', 'les_deux', ou 'a_verifier'
             "gratuit": False,
+            "web" : web
         }
 
         resultat.append(cas_data)
