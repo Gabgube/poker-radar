@@ -49,6 +49,25 @@ header h1 {
   font-weight: 800;
 }
 
+.header-titre {
+  display: flex;
+  align-items: center; /* Aligne le logo et le bloc de texte verticalement au centre */
+  gap: 12px; /* Espace entre le logo et le texte */
+}
+
+.titre-textes {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-site {
+  /* Le H1 fait environ 24px, le P fait 14px + les marges = ~42px au total. 
+     Tu peux ajuster cette valeur (45px, 50px...) selon la taille réelle de ton logo */
+  height: 42px; 
+  width: auto;
+  object-fit: contain;
+}
+
 header p {
   margin: 2px 0 0;
   font-size: 0.85rem;
@@ -382,6 +401,37 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
 
 /* --- 9. Mobile --- */
 @media(max-width: 800px) {
+  /* 1. Optimisation du Header */
+  header {
+    flex-wrap: nowrap;
+    padding: 10px 12px;
+  }
+  
+  /* On force le titre ET le paragraphe à disparaître sur mobile */
+  header h1, 
+  header p,
+  .titre-textes {
+    display: none !important; 
+  }
+
+  /* On s'assure que le logo reste bien visible */
+  .logo-site {
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .header-actions {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .btn-proposer {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  /* 2. Disposition principale (Ton code existant) */
   main {
     grid-template-columns: 1fr;
     grid-template-rows: 40vh 1fr;
@@ -404,7 +454,7 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
     overflow: hidden;
   }
 
-  /* Compactage des filtres sur mobile uniquement */
+  /* 3. Compactage des filtres (Ton code existant) */
   .filters {
     padding: 10px 12px;
     gap: 8px;

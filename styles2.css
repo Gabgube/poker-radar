@@ -1,0 +1,173 @@
+/* =========================================
+   styles2.css
+   ========================================= */
+
+/* --- 1. Variables & Palette Neutre --- */
+:root {
+  --brand-header: #064e3b; /* Vert tapis sombre */
+  --btn-primary: #064e3b;  
+  --btn-hover: #047557;    
+  
+  --ink: #0f172a;          /* Texte principal */
+  --muted: #64748b;        
+  --surface: #ffffff;      /* Surface des cartes */
+  --line: #e2e8f0;         /* Lignes de séparation */
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* --- 2. Configuration globale de la page (Centrage automatique) --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc; /* Fond gris très clair pour la lisibilité */
+}
+
+body {
+  font-family: "Bricolage Grotesque", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  
+  /* Centrage automatique de la zone de texte */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* --- 3. Styles des textes standards (Mentions & Confidentialité) --- */
+h1 {
+  color: var(--brand-header);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  color: var(--ink);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 36px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 8px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #334155;
+  font-size: 1.05rem;
+}
+
+strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Liens standards */
+a {
+  color: var(--btn-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Bouton / Lien "Retour à la carte" */
+body > p:first-child a, 
+.btn-retour {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--brand-header);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  transition: opacity 0.15s ease;
+}
+
+body > p:first-child a:hover, 
+.btn-retour:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* --- 4. Styles spécifiques à la page "Contact" (avec les divs) --- */
+.container {
+  width: 100%;
+}
+
+.content-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.content-card h1 {
+  margin-top: 0;
+}
+
+/* Boîte de contact */
+.contact-box {
+  background: #f1f5f9;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-item strong {
+  min-width: 80px;
+}
+
+/* Le vrai Bouton (Email) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  background: var(--btn-primary);
+  color: #fff !important;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+  text-decoration: none;
+}
+
+/* --- 5. Responsive Mobile --- */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 16px;
+  }
+  .content-card {
+    padding: 24px 20px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}
