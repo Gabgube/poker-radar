@@ -17,7 +17,6 @@ import time
 import urllib.parse
 import urllib.request
 
-# --- METS TON LIEN CSV GOOGLE SHEETS ICI ---
 # Format recommandé : https://docs.google.com/spreadsheets/d/ID_DE_TON_FICHIER/export?format=csv
 URL_SHEET_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSTZq18FLR7Svfn6PeISmF0ZaKstVpkePsFKTPnF3g2Xq8XtAbJrOfnXBV4YV3inSYdxBrLQ7wXxIPV/pub?output=csv"
 
