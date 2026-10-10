@@ -1,0 +1,27 @@
+name: Déploiement OVH
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  deploy:
+    name: 🎉 Envoi vers OVH
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 🚚 Récupération du code
+        uses: actions/checkout@v4
+        
+      - name: 📂 Synchronisation FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /www/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/
