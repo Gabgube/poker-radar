@@ -1,11 +1,14 @@
 RewriteEngine On
 
-# 1. Redirige /index.html vers la racine /
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+# 1. Rediriger /index.html vers /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ [NC]
 RewriteRule ^index\.html$ / [R=301,L]
 
-# 2. Supprime l'extension .html des URL
+# 2. Rediriger les URL se terminant par .html vers la version sans extension (ex: /contact.html -> /contact)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)\.html\ HTTP/ [NC]
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+# 3. Charger le fichier .html en arrière-plan pour les URL sans extension
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
