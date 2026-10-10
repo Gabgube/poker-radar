@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# 1. Redirige /index.html vers /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ / [R=301,L]
+
+# 2. Permet d'accéder aux pages sans taper .html (ex: /contact charge contact.html)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
