@@ -6,7 +6,7 @@
   
   --ink: #0f172a;          /* Texte principal */
   --muted: #64748b;        /* Texte secondaire */
-  --bg: #064e3b;           /* Fond de page léger */
+  --bg: #064e3b;            /* Fond de page léger */
   --surface: #ffffff;      /* Surface des cartes et panneaux */
   --line: #e2e8f0;         /* Séparateurs */
   --radius: 8px;
@@ -51,8 +51,8 @@ header h1 {
 
 .header-titre {
   display: flex;
-  align-items: center; /* Aligne le logo et le bloc de texte verticalement au centre */
-  gap: 12px; /* Espace entre le logo et le texte */
+  align-items: center;
+  gap: 12px;
 }
 
 .titre-textes {
@@ -118,7 +118,6 @@ header p {
   z-index: 99999;
 }
 
-/* C'est cette classe qui affiche le menu */
 .dropdown-content.show {
   display: block !important;
 }
@@ -135,11 +134,6 @@ header p {
 .dropdown-content a:hover {
   background-color: #f1f5f9;
   color: var(--btn-primary);
-}
-
-/* Affichage uniquement par la classe .show (au clic) */
-.dropdown-content.show {
-  display: block;
 }
 
 footer {
@@ -186,9 +180,22 @@ aside {
   margin-top: 10px;
 }
 
-/* Cache le bouton sur PC */
-.btn-mobile-summary {
+/* Masque le bouton d'accordéon sur PC */
+summary.btn-mobile-summary {
+  display: none !important;
+}
+
+/* Bascule du texte dynamique (partout) */
+.texte-cacher {
   display: none;
+}
+
+details[open] .texte-afficher {
+  display: none;
+}
+
+details[open] .texte-cacher {
+  display: inline;
 }
 
 .filters label {
@@ -414,14 +421,12 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
     padding: 10px 12px;
   }
   
-  /* On force le titre ET le paragraphe à disparaître sur mobile */
   header h1, 
   header p,
   .titre-textes {
     display: none !important; 
   }
 
-  /* On s'assure que le logo reste bien visible */
   .logo-site {
     height: 36px;
     flex-shrink: 0;
@@ -461,7 +466,7 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
     overflow: hidden;
   }
 
-  /* 3. Compactage des filtres*/
+  /* 3. Compactage des filtres */
   .filters {
     padding: 10px 12px;
     gap: 8px;
@@ -483,9 +488,9 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
     padding: 6px 10px;
   }
 
-  /* Sur mobile, on affiche le bouton et on style l'accordéon */
-  .btn-mobile-summary {
-    display: block;
+  /* Bouton d'accordéon affiché sur mobile uniquement */
+  summary.btn-mobile-summary {
+    display: block !important;
     width: 100%;
     padding: 10px;
     background-color: var(--btn-primary);
@@ -495,28 +500,10 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
     font-weight: 700;
     text-align: center;
     cursor: pointer;
-    list-style: none; /* Cache la petite flèche native */
+    list-style: none;
   }
   
-  .btn-mobile-summary::-webkit-details-marker {
+  summary.btn-mobile-summary::-webkit-details-marker {
     display: none;
   }
-
-  /* --- Bascule du texte du bouton --- */
-  /* Par défaut (fermé), on cache le texte "Cacher" */
-  .texte-cacher {
-    display: none;
-  }
-
-  /* Quand c'est ouvert, on cache "Afficher" et on montre "Cacher" */
-  details[open] .texte-afficher {
-    display: none;
-  }
-  
-  details[open] .texte-cacher {
-    display: inline;
-  }
-
-  /* Par défaut sur mobile, on ferme l'accordéon en enlevant l'attribut 'open' via un petit trick visuel, 
-     mais pour faire simple : l'utilisateur cliquera pour fermer/ouvrir. */
 }
