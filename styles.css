@@ -1,6 +1,6 @@
 /* --- 1. Variables & Palette Neutre --- */
 :root {
-  --brand-header: #064e3b; /* Vert tapis sombre (identité du site) */
+  --brand-header: #064e3b; /* Vert tapis sombre */
   --btn-primary: #064e3b;  /* Boutons principaux */
   --btn-hover: #047557;    /* Survol boutons */
   
@@ -61,8 +61,6 @@ header h1 {
 }
 
 .logo-site {
-  /* Le H1 fait environ 24px, le P fait 14px + les marges = ~42px au total. 
-     Tu peux ajuster cette valeur (45px, 50px...) selon la taille réelle de ton logo */
   height: 42px; 
   width: auto;
   object-fit: contain;
@@ -179,9 +177,18 @@ aside {
 .filters {
   padding: 16px;
   border-bottom: 1px solid var(--line);
+  background: #f1f5f9;
+}
+
+.filters-content {
   display: grid;
   gap: 12px;
-  background: #f1f5f9;
+  margin-top: 10px;
+}
+
+/* Cache le bouton sur PC */
+.btn-mobile-summary {
+  display: none;
 }
 
 .filters label {
@@ -431,7 +438,7 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
     text-align: center;
   }
 
-  /* 2. Disposition principale (Ton code existant) */
+  /* 2. Disposition principale */
   main {
     grid-template-columns: 1fr;
     grid-template-rows: 40vh 1fr;
@@ -454,7 +461,7 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
     overflow: hidden;
   }
 
-  /* 3. Compactage des filtres (Ton code existant) */
+  /* 3. Compactage des filtres*/
   .filters {
     padding: 10px 12px;
     gap: 8px;
@@ -475,4 +482,41 @@ select:focus-visible, a:focus-visible, .card:focus-visible {
     font-size: 0.82rem;
     padding: 6px 10px;
   }
+
+  /* Sur mobile, on affiche le bouton et on style l'accordéon */
+  .btn-mobile-summary {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--btn-primary);
+    color: white;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    list-style: none; /* Cache la petite flèche native */
+  }
+  
+  .btn-mobile-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* --- Bascule du texte du bouton --- */
+  /* Par défaut (fermé), on cache le texte "Cacher" */
+  .texte-cacher {
+    display: none;
+  }
+
+  /* Quand c'est ouvert, on cache "Afficher" et on montre "Cacher" */
+  details[open] .texte-afficher {
+    display: none;
+  }
+  
+  details[open] .texte-cacher {
+    display: inline;
+  }
+
+  /* Par défaut sur mobile, on ferme l'accordéon en enlevant l'attribut 'open' via un petit trick visuel, 
+     mais pour faire simple : l'utilisateur cliquera pour fermer/ouvrir. */
 }

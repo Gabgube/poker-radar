@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// --- 7. Gestion du Menu Déroulant (Burger) ---
+// --- 7. Gestion du Menu Déroulant ---
 
 function toggleMenu(e) {
   if (e) e.stopPropagation();

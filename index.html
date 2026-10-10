@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css">
 
-  <!-- Lien vers TON fichier CSS -->
+  <!-- Lien vers le fichier CSS -->
   <link rel="stylesheet" href="styles.css">
 
   <link rel="icon" type="image/ico" href="assets/img/icon.ico">
@@ -55,32 +55,39 @@
   <main>
     <!-- Panneau latéral avec les filtres et la liste -->
     <aside>
-      <div class="filters">
-        <label>Type de lieu
-          <select id="f-type">
-            <option value="">Tous les types</option>
-            <option value="bar">Red Cactus</option>
-            <option value="casino">Casinos</option>
-            <option value="associatif">Associatif</option>
-          </select>
-          </select>
-        </label>
-        <label>Tarif
-          <select id="f-prix">
-            <option value="">Gratuit et payant</option>
-            <option value="gratuit">Gratuit</option>
-            <option value="payant">Payant</option>
-          </select>
-        </label>
-        <label> Format
-        <select id="f-poker">
-          <option value="">Tous les formats</option>
-          <option value="cash">Cash Game</option>
-          <option value="tournois">Tournois</option>
-          <option value="les_deux">Cash Game & Tournois</option>
-        </select>
-      </label>
-      </div>
+      <!-- Filtres -->
+      <details class="filters" open>
+        <summary class="btn-mobile-summary">
+          <span class="texte-afficher">Afficher les filtres</span>
+          <span class="texte-cacher">Cacher les filtres</span>
+        </summary>
+        
+        <div class="filters-content">
+          <label>Type de lieu
+            <select id="f-type">
+              <option value="">Tous les types</option>
+              <option value="bar">Red Cactus</option>
+              <option value="casino">Casinos</option>
+              <option value="associatif">Associatif</option>
+            </select>
+          </label>
+          <label>Tarif
+            <select id="f-prix">
+              <option value="">Gratuit et payant</option>
+              <option value="gratuit">Gratuit</option>
+              <option value="payant">Payant</option>
+            </select>
+          </label>
+          <label>Format
+            <select id="f-poker">
+              <option value="">Tous les formats</option>
+              <option value="cash">Cash Game</option>
+              <option value="tournois">Tournois</option>
+              <option value="les_deux">Cash Game & Tournois</option>
+            </select>
+          </label>
+        </div>
+      </details>
       
       <!-- Compteur de résultats -->
       <div id="count" aria-live="polite"></div>
@@ -94,7 +101,6 @@
   </main>
 
   <!-- Pied de page -->
-  <!-- <footer>Interdit aux mineurs. Jouer comporte des risques...</footer> -->
 
   <!-- Fenêtre qui affiche le formulaire pour les organisateurs de tournois caritatifs -->
   <dialog id="dlg-tournoi" aria-labelledby="dlg-titre">
@@ -113,7 +119,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
 
-  <!-- Lien vers TON fichier JavaScript -->
+  <!-- Lien vers le fichier JavaScript -->
   <script src="app.js"></script>
 </body>
 </html>
